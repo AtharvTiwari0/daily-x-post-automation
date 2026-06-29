@@ -1,0 +1,672 @@
+[2026-06-29T12:48:33.113Z] [WARN] GEMINI_API_KEY is not set. Using mock Gemini responses.
+[2026-06-29T12:48:34.305Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T12:48:34.305Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T12:48:34.306Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T12:48:34.337Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T12:48:34.337Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T12:48:34.345Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T12:48:34.346Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T12:48:34.347Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T12:48:35.008Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T12:48:35.066Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T12:48:35.066Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T12:48:35.240Z] [INFO] Fetched and filtered 13 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T12:48:35.241Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T12:48:36.055Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T12:48:36.056Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T12:48:36.117Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T12:48:36.118Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T12:48:36.748Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: JavaScript.
+[2026-06-29T12:48:36.749Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T12:48:36.803Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T12:48:36.803Z] [INFO] Total unique GitHub repositories collected: 43
+[2026-06-29T12:48:36.893Z] [INFO] Successfully fetched and filtered 31 stories from Hacker News.
+[2026-06-29T12:48:37.970Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: AI.
+[2026-06-29T12:48:37.971Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T12:48:38.781Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T12:48:38.782Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T12:48:39.431Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T12:48:39.432Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T12:48:40.190Z] [INFO] Fetched and filtered 3 new articles from Dev.to tag: Flutter.
+[2026-06-29T12:48:40.191Z] [INFO] Successfully fetched and merged a total of 72 unique Dev.to articles.
+[2026-06-29T12:48:40.191Z] [INFO] Collected a total of 146 raw topics from all sources.
+[2026-06-29T12:48:40.193Z] [INFO] Merged duplicates: Reduced 146 topics to 146 unique topics.
+[2026-06-29T12:48:40.193Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T12:48:40.197Z] [INFO] No history found for the last 30 days. Skipping semantic check.
+[2026-06-29T12:48:40.198Z] [INFO] Ranking and selecting top 3 topics from 146 candidate topics...
+[2026-06-29T12:48:40.201Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert editor for tech newsletters and developer communities.
+Review the following list ..."
+[2026-06-29T12:48:40.202Z] [WARN] Gemini ranking returned invalid results. Falling back to sorting by engagement score.
+[2026-06-29T12:48:40.203Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T12:48:40.204Z] [INFO] Top 3 topics selected: ["openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ","affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.","n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."]
+[2026-06-29T12:48:40.205Z] [INFO] Generating posts for topic: "openclaw/openclaw - Your own personal AI assistant..."
+[2026-06-29T12:48:40.205Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:40.213Z] [ERROR] Failed to generate posts for topic: "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ": | Error: Cannot read properties of undefined (reading 'trim')
+Stack: TypeError: Cannot read properties of undefined (reading 'trim')
+    at cleanPostText (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:56:22)
+    at generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:94:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:48:40.214Z] [INFO] Generating posts for topic: "affaan-m/ECC - The agent harness performance optim..."
+[2026-06-29T12:48:40.214Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:40.215Z] [ERROR] Failed to generate posts for topic: "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.": | Error: Cannot read properties of undefined (reading 'trim')
+Stack: TypeError: Cannot read properties of undefined (reading 'trim')
+    at cleanPostText (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:56:22)
+    at generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:94:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:48:40.216Z] [INFO] Generating posts for topic: "n8n-io/n8n - Fair-code workflow automation platfor..."
+[2026-06-29T12:48:40.216Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:40.217Z] [ERROR] Failed to generate posts for topic: "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.": | Error: Cannot read properties of undefined (reading 'trim')
+Stack: TypeError: Cannot read properties of undefined (reading 'trim')
+    at cleanPostText (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:56:22)
+    at generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:94:15)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:48:40.217Z] [INFO] Generating daily news summary via Gemini...
+[2026-06-29T12:48:40.218Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are reviewing today's dev, AI, startup, and open-source topics to generate a high-level daily s..."
+[2026-06-29T12:48:40.219Z] [INFO] Preparing to send post ideas email...
+[2026-06-29T12:48:40.220Z] [INFO] [DRY RUN - SMTP Email] To:  | Subject: "Today's X Post Ideas"
+[2026-06-29T12:48:40.220Z] [INFO] Dry Run complete. Logged email preview below:
+================================================
+TODAY'S X POST IDEAS
+================================================
+
+Daily Summary
+• Biggest AI News: AI advancements continue to lead developer discussions, particularly around open models and API optimizations.
+• Biggest Web Development News: Web framework updates focused on build speed, server components, and routing performance.
+• Biggest Open Source Trend: Fast-growing GitHub repositories highlighted new developer tools and automation scripts.
+• Biggest Startup Discussion: Founder and hacker communities discussed bootstrapped monetization, cloud cost scaling, and DB selections.
+
+================================================
+Execution Metadata
+Execution Time: 5.92s
+Number of Topics Processed: 146
+Sources Used: HackerNews, DevTo, GitHub
+================================================
+
+[2026-06-29T12:48:40.222Z] [INFO] Successfully wrote 0 items to history.
+[2026-06-29T12:48:40.223Z] [INFO] History file updated successfully.
+[2026-06-29T12:48:40.224Z] [INFO] Daily workflow finished successfully in 5.92s.
+[2026-06-29T12:48:57.304Z] [WARN] GEMINI_API_KEY is not set. Using mock Gemini responses.
+[2026-06-29T12:48:57.457Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T12:48:57.457Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T12:48:57.458Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T12:48:57.491Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T12:48:57.491Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T12:48:57.497Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T12:48:57.498Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T12:48:57.498Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T12:48:57.703Z] [INFO] Fetched and filtered 13 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T12:48:57.704Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T12:48:57.769Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T12:48:57.770Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T12:48:57.833Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T12:48:57.834Z] [INFO] Total unique GitHub repositories collected: 43
+[2026-06-29T12:48:57.888Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T12:48:57.889Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T12:48:58.109Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T12:48:58.692Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T12:48:58.692Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T12:48:58.764Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: JavaScript.
+[2026-06-29T12:48:58.765Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T12:48:58.830Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: AI.
+[2026-06-29T12:48:58.830Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T12:48:59.236Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T12:48:59.237Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T12:48:59.309Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T12:48:59.309Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T12:48:59.376Z] [INFO] Fetched and filtered 3 new articles from Dev.to tag: Flutter.
+[2026-06-29T12:48:59.377Z] [INFO] Successfully fetched and merged a total of 72 unique Dev.to articles.
+[2026-06-29T12:48:59.952Z] [INFO] Successfully fetched and filtered 31 stories from Hacker News.
+[2026-06-29T12:48:59.953Z] [INFO] Collected a total of 146 raw topics from all sources.
+[2026-06-29T12:48:59.954Z] [INFO] Merged duplicates: Reduced 146 topics to 146 unique topics.
+[2026-06-29T12:48:59.955Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T12:48:59.957Z] [INFO] No history found for the last 30 days. Skipping semantic check.
+[2026-06-29T12:48:59.957Z] [INFO] Ranking and selecting top 3 topics from 146 candidate topics...
+[2026-06-29T12:48:59.960Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert editor for tech newsletters and developer communities.
+Review the following list ..."
+[2026-06-29T12:48:59.961Z] [WARN] Gemini ranking returned invalid results. Falling back to sorting by engagement score.
+[2026-06-29T12:48:59.961Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T12:48:59.962Z] [INFO] Top 3 topics selected: ["openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ","affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.","n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations."]
+[2026-06-29T12:48:59.962Z] [INFO] Generating posts for topic: "openclaw/openclaw - Your own personal AI assistant..."
+[2026-06-29T12:48:59.963Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:59.963Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:48:59.964Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated posts abou..."
+[2026-06-29T12:48:59.964Z] [INFO] Generating posts for topic: "affaan-m/ECC - The agent harness performance optim..."
+[2026-06-29T12:48:59.965Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:59.965Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:48:59.965Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated posts abou..."
+[2026-06-29T12:48:59.966Z] [INFO] Generating posts for topic: "n8n-io/n8n - Fair-code workflow automation platfor..."
+[2026-06-29T12:48:59.966Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating social media posts for iamatharv (Full Stack Developer) targeting (Developers, F..."
+[2026-06-29T12:48:59.967Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:48:59.967Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated posts abou..."
+[2026-06-29T12:48:59.967Z] [INFO] Generating daily news summary via Gemini...
+[2026-06-29T12:48:59.968Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are reviewing today's dev, AI, startup, and open-source topics to generate a high-level daily s..."
+[2026-06-29T12:48:59.969Z] [INFO] Preparing to send post ideas email...
+[2026-06-29T12:48:59.969Z] [INFO] [DRY RUN - SMTP Email] To:  | Subject: "Today's X Post Ideas"
+[2026-06-29T12:48:59.970Z] [INFO] Dry Run complete. Logged email preview below:
+================================================
+TODAY'S X POST IDEAS
+================================================
+
+TOPIC 1
+Title: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 
+Source: GitHub
+Original Link: https://github.com/openclaw/openclaw
+Why AI Selected It: Selected automatically based on engagement score (460754) as fallback.
+
+★★★★☆ [Main Post]
+Insights on developer trends: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 . Check it out here.
+
+★★★★☆ [Alternate Version]
+Interesting release today: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 .
+
+★★★★☆ [Different Angle]
+Why this is a game-changer: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 .
+
+★★★★☆ [Hot Take]
+Hot take on this release: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  is shifting developer productivity.
+
+★★★★☆ [Reply Question]
+How do you plan to use openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞  in your stack?
+
+Suggested Image Idea:
+A clean dashboard screenshot or mock code block.
+------------------------------------------------
+
+TOPIC 2
+Title: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.
+Source: GitHub
+Original Link: https://github.com/affaan-m/ECC
+Why AI Selected It: Selected automatically based on engagement score (257485) as fallback.
+
+★★★★☆ [Main Post]
+Insights on developer trends: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.. Check it out here.
+
+★★★★☆ [Alternate Version]
+Interesting release today: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond..
+
+★★★★☆ [Different Angle]
+Why this is a game-changer: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond..
+
+★★★★☆ [Hot Take]
+Hot take on this release: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. is shifting developer productivity.
+
+★★★★☆ [Reply Question]
+How do you plan to use affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond. in your stack?
+
+Suggested Image Idea:
+A clean dashboard screenshot or mock code block.
+------------------------------------------------
+
+TOPIC 3
+Title: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.
+Source: GitHub
+Original Link: https://github.com/n8n-io/n8n
+Why AI Selected It: Selected automatically based on engagement score (253406) as fallback.
+
+★★★★☆ [Main Post]
+Insights on developer trends: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.. Check it out here.
+
+★★★★☆ [Alternate Version]
+Interesting release today: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations..
+
+★★★★☆ [Different Angle]
+Why this is a game-changer: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations..
+
+★★★★☆ [Hot Take]
+Hot take on this release: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations. is shifting developer productivity.
+
+★★★★☆ [Reply Question]
+How do you plan to use n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations. in your stack?
+
+Suggested Image Idea:
+A clean dashboard screenshot or mock code block.
+------------------------------------------------
+
+Daily Summary
+• Biggest AI News: AI advancements continue to lead developer discussions, particularly around open models and API optimizations.
+• Biggest Web Development News: Web framework updates focused on build speed, server components, and routing performance.
+• Biggest Open Source Trend: Fast-growing GitHub repositories highlighted new developer tools and automation scripts.
+• Biggest Startup Discussion: Founder and hacker communities discussed bootstrapped monetization, cloud cost scaling, and DB selections.
+
+================================================
+Execution Metadata
+Execution Time: 2.51s
+Number of Topics Processed: 146
+Sources Used: HackerNews, DevTo, GitHub
+================================================
+
+[2026-06-29T12:48:59.972Z] [INFO] Successfully wrote 3 items to history.
+[2026-06-29T12:48:59.973Z] [INFO] History file updated successfully.
+[2026-06-29T12:48:59.974Z] [INFO] Daily workflow finished successfully in 2.51s.
+[2026-06-29T12:53:23.568Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T12:53:23.571Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T12:53:23.571Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T12:53:23.599Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T12:53:23.599Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T12:53:23.605Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T12:53:23.606Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T12:53:23.606Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T12:53:23.952Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T12:53:23.953Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T12:53:24.060Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T12:53:24.060Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T12:53:24.277Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T12:53:24.439Z] [INFO] Fetched and filtered 11 new articles from Dev.to tag: JavaScript.
+[2026-06-29T12:53:24.440Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T12:53:24.455Z] [INFO] Fetched and filtered 13 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T12:53:24.456Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T12:53:25.114Z] [INFO] Fetched and filtered 8 new articles from Dev.to tag: AI.
+[2026-06-29T12:53:25.114Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T12:53:25.280Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T12:53:25.280Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T12:53:25.482Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T12:53:25.483Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T12:53:25.545Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T12:53:25.545Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T12:53:26.149Z] [INFO] Successfully fetched and filtered 32 stories from Hacker News.
+[2026-06-29T12:53:26.151Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T12:53:26.152Z] [INFO] Total unique GitHub repositories collected: 43
+[2026-06-29T12:53:26.183Z] [INFO] Fetched and filtered 3 new articles from Dev.to tag: Flutter.
+[2026-06-29T12:53:26.183Z] [INFO] Successfully fetched and merged a total of 67 unique Dev.to articles.
+[2026-06-29T12:53:26.184Z] [INFO] Collected a total of 142 raw topics from all sources.
+[2026-06-29T12:53:26.184Z] [INFO] Merged duplicates: Reduced 142 topics to 142 unique topics.
+[2026-06-29T12:53:26.185Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T12:53:26.562Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:27.878Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:30.195Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async filterTopicsByHistory (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:65:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:103:26)
+[2026-06-29T12:53:30.195Z] [ERROR] Error during semantic similarity history check: | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async filterTopicsByHistory (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:65:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:103:26)
+[2026-06-29T12:53:30.197Z] [INFO] Fallback URL filtering complete. Kept 139 of 142 topics.
+[2026-06-29T12:53:30.197Z] [INFO] Ranking and selecting top 3 topics from 139 candidate topics...
+[2026-06-29T12:53:30.739Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:32.306Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:34.857Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async rankAndSelectTopics (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:123:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:111:20)
+[2026-06-29T12:53:34.858Z] [ERROR] Error ranking topics with Gemini: | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async rankAndSelectTopics (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:123:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:111:20)
+[2026-06-29T12:53:34.858Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T12:53:34.859Z] [INFO] Top 3 topics selected: ["NousResearch/hermes-agent - The agent that grows with you","Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.","f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy."]
+[2026-06-29T12:53:34.860Z] [INFO] Generating posts for topic: "NousResearch/hermes-agent - The agent that grows w..."
+[2026-06-29T12:53:35.082Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:36.290Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:38.494Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:38.494Z] [ERROR] Failed to generate initial posts via Gemini. Using fallbacks. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:38.495Z] [INFO] Generating posts for topic: "Significant-Gravitas/AutoGPT - AutoGPT is the visi..."
+[2026-06-29T12:53:38.830Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:40.048Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:42.261Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:42.262Z] [ERROR] Failed to generate initial posts via Gemini. Using fallbacks. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:42.263Z] [INFO] Generating posts for topic: "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. S..."
+[2026-06-29T12:53:42.558Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:43.770Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:45.976Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:45.977Z] [ERROR] Failed to generate initial posts via Gemini. Using fallbacks. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateAndReviewPosts (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\index.ts:79:14)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:123:23)
+[2026-06-29T12:53:45.978Z] [INFO] Generating daily news summary via Gemini...
+[2026-06-29T12:53:46.339Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:47.565Z] [WARN] Gemini JSON Generation (gemini-1.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+[2026-06-29T12:53:49.788Z] [ERROR] Gemini JSON Generation (gemini-1.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent: [404 Not Found] models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ModelService.ListModels to see the list of available models and their supported methods.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async generateDailySummary (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:38:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:131:24)
+[2026-06-29T12:53:49.789Z] [WARN] Failed to generate daily summary via Gemini. Using default fallback summaries. {"status":404,"statusText":"Not Found"}
+[2026-06-29T12:53:49.790Z] [INFO] Preparing to send post ideas email...
+[2026-06-29T12:53:53.739Z] [INFO] Email sent successfully: 250 2.0.0 OK  1782737632 af79cd13be357-926004ab49csm2064903785a.34 - gsmtp
+[2026-06-29T12:53:53.742Z] [INFO] Successfully wrote 6 items to history.
+[2026-06-29T12:53:53.743Z] [INFO] History file updated successfully.
+[2026-06-29T12:53:53.744Z] [INFO] Daily workflow finished successfully in 26.22s.
+[2026-06-29T12:54:21.065Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T12:54:21.068Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T12:54:21.069Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T12:54:21.115Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T12:54:21.115Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T12:54:21.120Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T12:54:21.121Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T12:54:21.121Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T12:54:21.763Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T12:54:21.764Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T12:54:21.787Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T12:54:21.860Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T12:54:21.861Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T12:54:21.981Z] [INFO] Fetched and filtered 13 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T12:54:21.981Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T12:54:22.602Z] [INFO] Fetched and filtered 11 new articles from Dev.to tag: JavaScript.
+[2026-06-29T12:54:22.602Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T12:54:22.664Z] [INFO] Fetched and filtered 8 new articles from Dev.to tag: AI.
+[2026-06-29T12:54:22.665Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T12:54:22.722Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T12:54:22.722Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T12:54:22.751Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T12:54:22.751Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T12:54:22.821Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T12:54:22.821Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T12:54:22.887Z] [INFO] Fetched and filtered 3 new articles from Dev.to tag: Flutter.
+[2026-06-29T12:54:22.887Z] [INFO] Successfully fetched and merged a total of 67 unique Dev.to articles.
+[2026-06-29T12:54:23.411Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T12:54:23.412Z] [INFO] Total unique GitHub repositories collected: 43
+[2026-06-29T12:54:23.931Z] [INFO] Successfully fetched and filtered 32 stories from Hacker News.
+[2026-06-29T12:54:23.931Z] [INFO] Collected a total of 142 raw topics from all sources.
+[2026-06-29T12:54:23.933Z] [INFO] Merged duplicates: Reduced 142 topics to 142 unique topics.
+[2026-06-29T12:54:23.933Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T12:55:18.411Z] [INFO] Semantic filtering complete. Kept 129 of 142 candidate topics.
+[2026-06-29T12:55:18.412Z] [INFO] Ranking and selecting top 3 topics from 129 candidate topics...
+[2026-06-29T12:56:09.286Z] [INFO] Successfully selected the top 3 topics via Gemini ranking.
+[2026-06-29T12:56:09.288Z] [INFO] Top 3 topics selected: ["Health Check Endpoint in Node.js: Liveness vs Readiness","The Silent Cost of AI Agents: Why Your Next.js SaaS Is Burning Money on LLM Calls","How I got 570k Reddit impressions for my side project using data journalism posts"]
+[2026-06-29T12:56:09.289Z] [INFO] Generating posts for topic: "Health Check Endpoint in Node.js: Liveness vs Read..."
+[2026-06-29T12:56:21.129Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:56:31.397Z] [INFO] Generating posts for topic: "The Silent Cost of AI Agents: Why Your Next.js Saa..."
+[2026-06-29T12:56:40.930Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:56:53.201Z] [INFO] Generating posts for topic: "How I got 570k Reddit impressions for my side proj..."
+[2026-06-29T12:57:05.619Z] [INFO] Running quality review loop for generated posts...
+[2026-06-29T12:57:18.329Z] [INFO] Generating daily news summary via Gemini...
+[2026-06-29T12:57:46.530Z] [INFO] Preparing to send post ideas email...
+[2026-06-29T12:57:50.796Z] [INFO] Email sent successfully: 250 2.0.0 OK  1782737869 5614622812f47-4935596b734sm6714330b6e.17 - gsmtp
+[2026-06-29T12:57:50.798Z] [INFO] Successfully wrote 9 items to history.
+[2026-06-29T12:57:50.799Z] [INFO] History file updated successfully.
+[2026-06-29T12:57:50.800Z] [INFO] Daily workflow finished successfully in 205.46s.
+[2026-06-29T13:09:11.408Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T13:09:11.409Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T13:09:11.410Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T13:09:11.451Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T13:09:11.452Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T13:09:11.457Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T13:09:11.458Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T13:09:11.458Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T13:09:12.077Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T13:09:12.078Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T13:09:12.120Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T13:09:12.424Z] [INFO] Fetched and filtered 14 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T13:09:12.425Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T13:09:12.887Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T13:09:12.888Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T13:09:13.192Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: JavaScript.
+[2026-06-29T13:09:13.192Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T13:09:13.276Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T13:09:13.277Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T13:09:13.744Z] [INFO] Fetched and filtered 11 new articles from Dev.to tag: AI.
+[2026-06-29T13:09:13.744Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T13:09:13.826Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T13:09:13.826Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T13:09:14.207Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T13:09:14.208Z] [INFO] Total unique GitHub repositories collected: 44
+[2026-06-29T13:09:14.299Z] [INFO] Successfully fetched and filtered 31 stories from Hacker News.
+[2026-06-29T13:09:14.479Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T13:09:14.479Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T13:09:15.387Z] [INFO] Fetched and filtered 2 new articles from Dev.to tag: Flutter.
+[2026-06-29T13:09:15.387Z] [INFO] Successfully fetched and merged a total of 70 unique Dev.to articles.
+[2026-06-29T13:09:15.388Z] [INFO] Collected a total of 145 raw topics from all sources.
+[2026-06-29T13:09:15.388Z] [INFO] Merged duplicates: Reduced 145 topics to 145 unique topics.
+[2026-06-29T13:09:15.389Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T13:09:15.390Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert content filtering system.
+You are given a list of new candidate topics and a list..."
+[2026-06-29T13:09:15.390Z] [WARN] Invalid response from semantic filter. Falling back to simple URL match filtering.
+[2026-06-29T13:09:15.391Z] [INFO] Fallback URL filtering complete. Kept 137 of 145 topics.
+[2026-06-29T13:09:15.392Z] [INFO] Ranking and selecting top 3 topics from 137 candidate topics...
+[2026-06-29T13:09:15.394Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert tech editor. Review the following list of trending topics:
+
+[
+  {
+    "index": 0,..."
+[2026-06-29T13:09:15.395Z] [WARN] Gemini ranking returned invalid results. Falling back to sorting by engagement score.
+[2026-06-29T13:09:15.395Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T13:09:15.396Z] [INFO] Top 3 topics selected: ["langgenius/dify - Production-ready platform for agentic workflow development.","open-webui/open-webui - User-friendly AI Interface (Supports Ollama, OpenAI API, ...)","langchain-ai/langchain - The agent engineering platform."]
+[2026-06-29T13:09:15.396Z] [INFO] Generating single X post for topic: "langgenius/dify - Production-ready platform for ag..."
+[2026-06-29T13:09:15.396Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:09:15.397Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:09:15.398Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:09:15.398Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:09:15.399Z] [INFO] Generating single X post for topic: "open-webui/open-webui - User-friendly AI Interface..."
+[2026-06-29T13:09:15.399Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:09:15.399Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:09:15.400Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:09:15.400Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:09:15.401Z] [INFO] Generating single X post for topic: "langchain-ai/langchain - The agent engineering pla..."
+[2026-06-29T13:09:15.401Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:09:15.401Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:09:15.402Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:09:15.402Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:09:15.402Z] [INFO] Preparing to send Today's X Posts email...
+[2026-06-29T13:09:15.403Z] [INFO] [DRY RUN - SMTP Email] To: atharv.tiwari.012@gmail.com | Subject: "Today's X Posts"
+[2026-06-29T13:09:15.403Z] [INFO] Dry Run complete. Logged email preview below:
+================================================
+
+🔥 Topic #1
+
+Interesting update on langgenius/dify - Production-ready platform for agentic workflow development.
+
+Insights on developer trends: langgenius/dify - Production-ready platform for agentic workflow development.. Check it out here: https://github.com/langgenius/dify
+
+https://github.com/langgenius/dify
+
+Estimated Engagement Score: 75/100
+
+---
+
+🔥 Topic #2
+
+Interesting update on open-webui/open-webui - User-friendly AI Interface (Supports Ollama, OpenAI API, .
+
+Insights on developer trends: open-webui/open-webui - User-friendly AI Interface (Supports Ollama, OpenAI API, ...). Check it out here: https://github.com/open-webui/open-webui
+
+https://github.com/open-webui/open-webui
+
+Estimated Engagement Score: 75/100
+
+---
+
+🔥 Topic #3
+
+Interesting update on langchain-ai/langchain - The agent engineering platform.
+
+Insights on developer trends: langchain-ai/langchain - The agent engineering platform.. Check it out here: https://github.com/langchain-ai/langchain
+
+https://github.com/langchain-ai/langchain
+
+Estimated Engagement Score: 75/100
+
+================================================
+
+[2026-06-29T13:09:15.404Z] [INFO] Successfully wrote 12 items to history.
+[2026-06-29T13:09:15.405Z] [INFO] History file updated successfully.
+[2026-06-29T13:09:15.405Z] [INFO] Daily workflow finished successfully in 3.99s.
+[2026-06-29T13:09:20.285Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T13:09:20.287Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T13:09:20.288Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T13:09:20.322Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T13:09:20.323Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T13:09:20.327Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T13:09:20.328Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T13:09:20.328Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T13:09:20.515Z] [INFO] Fetched and filtered 14 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T13:09:20.515Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T13:09:20.576Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T13:09:20.576Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T13:09:20.632Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T13:09:20.633Z] [INFO] Total unique GitHub repositories collected: 44
+[2026-06-29T13:09:20.692Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T13:09:20.693Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T13:09:20.824Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-06-29T13:09:20.825Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T13:09:20.900Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: JavaScript.
+[2026-06-29T13:09:20.901Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T13:09:20.983Z] [INFO] Fetched and filtered 11 new articles from Dev.to tag: AI.
+[2026-06-29T13:09:20.983Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T13:09:20.985Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T13:09:21.065Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T13:09:21.066Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T13:09:21.136Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T13:09:21.136Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T13:09:21.206Z] [INFO] Fetched and filtered 2 new articles from Dev.to tag: Flutter.
+[2026-06-29T13:09:21.207Z] [INFO] Successfully fetched and merged a total of 70 unique Dev.to articles.
+[2026-06-29T13:09:23.253Z] [INFO] Successfully fetched and filtered 31 stories from Hacker News.
+[2026-06-29T13:09:23.254Z] [INFO] Collected a total of 145 raw topics from all sources.
+[2026-06-29T13:09:23.255Z] [INFO] Merged duplicates: Reduced 145 topics to 145 unique topics.
+[2026-06-29T13:09:23.255Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T13:11:58.832Z] [INFO] Semantic filtering complete. Kept 108 of 145 candidate topics.
+[2026-06-29T13:11:58.834Z] [INFO] Ranking and selecting top 3 topics from 108 candidate topics...
+[2026-06-29T13:12:19.883Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-06-29T13:12:24.387Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-06-29T13:12:45.132Z] [ERROR] Gemini JSON Generation (gemini-2.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async rankAndSelectTopics (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:123:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:69:20)
+[2026-06-29T13:12:45.134Z] [ERROR] Error ranking topics with Gemini: | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at handleResponseNotOk (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async makeRequest (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:324:9)
+    at async generateContent (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\node_modules\@google\generative-ai\dist\index.js:741:22)
+    at async label (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ai\gemini.ts:64:20)
+    at async retry (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\utils\helpers.ts:49:14)
+    at async rankAndSelectTopics (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\ranking\index.ts:123:20)
+    at async main (C:\Users\acer\Pictures\Mi\Documents\atharv\daily-x-post-automation\src\index.ts:69:20)
+[2026-06-29T13:12:45.135Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T13:12:45.136Z] [INFO] Top 3 topics selected: ["firecrawl/firecrawl - The API to search, scrape, and interact with the web at scale. 🔥","Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.","github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development"]
+[2026-06-29T13:12:45.138Z] [INFO] Generating single X post for topic: "firecrawl/firecrawl - The API to search, scrape, a..."
+[2026-06-29T13:12:51.220Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:12:55.975Z] [INFO] Quality review result: Passed = true. Feedback: The post is concise, under the character limit, and sounds authentically like a developer sharing a real pain point and a potential solution. It avoids all specified AI clichés, buzzwords, and unnecessary fluff. The tone is natural, direct, and focused on practical impact.
+[2026-06-29T13:12:55.976Z] [INFO] Generating single X post for topic: "Comfy-Org/ComfyUI - The most powerful and modular ..."
+[2026-06-29T13:13:06.163Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:13:10.822Z] [INFO] Quality review result: Passed = true. Feedback: The post is concise (201 chars), sounds authentic to a developer/founder, avoids AI clichés and corporate buzzwords, and has no emojis or hashtags. It's direct, confident, and factually consistent with the tool's capabilities. Excellent job.
+[2026-06-29T13:13:10.824Z] [INFO] Generating single X post for topic: "github/spec-kit - 💫 Toolkit to help you get start..."
+[2026-06-29T13:13:20.085Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:13:20.282Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 41.122304729s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"41s"}]
+[2026-06-29T13:13:21.496Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 39.908685289s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"39s"}]
+[2026-06-29T13:13:28.790Z] [INFO] Quality review result: Passed = true. Feedback: Excellent draft. It's concise, sounds like a real developer sharing a genuine insight, avoids all AI clichés and unnecessary fluff. Perfect character count, no emojis/hashtags needed. Hits all the requirements.
+[2026-06-29T13:13:28.792Z] [INFO] Preparing to send Today's X Posts email...
+[2026-06-29T13:13:32.324Z] [INFO] Email sent successfully: 250 2.0.0 OK  1782738810 d9443c01a7336-2c9d2b07bd4sm36354755ad.45 - gsmtp
+[2026-06-29T13:13:32.329Z] [INFO] Successfully wrote 15 items to history.
+[2026-06-29T13:13:32.330Z] [INFO] History file updated successfully.
+[2026-06-29T13:13:32.331Z] [INFO] Daily workflow finished successfully in 248.51s.

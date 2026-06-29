@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.env
+# Ignore diagnostic scripts in scratch if any
+scratch/

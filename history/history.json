@@ -1,0 +1,107 @@
+[
+  {
+    "topic": "openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+    "source": "GitHub",
+    "url": "https://github.com/openclaw/openclaw",
+    "generatedPost": "Insights on developer trends: openclaw/openclaw - Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 . Check it out here.",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+    "source": "GitHub",
+    "url": "https://github.com/affaan-m/ECC",
+    "generatedPost": "Insights on developer trends: affaan-m/ECC - The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.. Check it out here.",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+    "source": "GitHub",
+    "url": "https://github.com/n8n-io/n8n",
+    "generatedPost": "Insights on developer trends: n8n-io/n8n - Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.. Check it out here.",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "NousResearch/hermes-agent - The agent that grows with you",
+    "source": "GitHub",
+    "url": "https://github.com/NousResearch/hermes-agent",
+    "generatedPost": "Found this interesting update about \"NousResearch/hermes-agent - The agent that grows with you\": https://github.com/NousResearch/hermes-agent",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.",
+    "source": "GitHub",
+    "url": "https://github.com/Significant-Gravitas/AutoGPT",
+    "generatedPost": "Found this interesting update about \"Significant-Gravitas/AutoGPT - AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the tools, so that you can focus on what matters.\": https://github.com/Significant-Gravitas/AutoGPT",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.",
+    "source": "GitHub",
+    "url": "https://github.com/f/prompts.chat",
+    "generatedPost": "Found this interesting update about \"f/prompts.chat - f.k.a. Awesome ChatGPT Prompts. Share, discover, and collect prompts from the community. Free and open source — self-host for your organization with complete privacy.\": https://github.com/f/prompts.chat",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "Health Check Endpoint in Node.js: Liveness vs Readiness",
+    "source": "DevTo",
+    "url": "https://dev.to/iurii_rogulia/health-check-endpoint-in-nodejs-liveness-vs-readiness-418p",
+    "generatedPost": "Your Node.js app is restarting unexpectedly? It's often due to misconfigured health checks. Distinguish liveness (is the process alive?) from readiness (can it serve traffic with dependencies?). Getting this right prevents restart loops and keeps your service stable. How do y...",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "The Silent Cost of AI Agents: Why Your Next.js SaaS Is Burning Money on LLM Calls",
+    "source": "DevTo",
+    "url": "https://dev.to/abdul___rehman/the-silent-cost-of-ai-agents-why-your-nextjs-saas-is-burning-money-on-llm-calls-41m",
+    "generatedPost": "Had to shut down a perfectly working Next.js AI pipeline. The client loved it, but the LLM bills were astronomical. Most teams optimize for accuracy, but ignore cost per action. That's the silent killer. Are you tracking your token spend or just hoping for the best?",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "How I got 570k Reddit impressions for my side project using data journalism posts",
+    "source": "DevTo",
+    "url": "https://dev.to/iluvdata/how-i-got-570k-reddit-impressions-for-my-side-project-using-data-journalism-posts-19nc",
+    "generatedPost": "Hit 570k Reddit impressions for my side project with $0 ad spend. The secret? Data journalism.\nInstead of pushing my product, I shared genuinely useful data *from* it (e.g., EU GPU price trends). The post provided standalone value, with my tool as the source. Organic growth g...",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "langgenius/dify - Production-ready platform for agentic workflow development.",
+    "source": "GitHub",
+    "url": "https://github.com/langgenius/dify",
+    "generatedPost": "Insights on developer trends: langgenius/dify - Production-ready platform for agentic workflow development.. Check it out here: https://github.com/langgenius/dify",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "open-webui/open-webui - User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+    "source": "GitHub",
+    "url": "https://github.com/open-webui/open-webui",
+    "generatedPost": "Insights on developer trends: open-webui/open-webui - User-friendly AI Interface (Supports Ollama, OpenAI API, ...). Check it out here: https://github.com/open-webui/open-webui",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "langchain-ai/langchain - The agent engineering platform.",
+    "source": "GitHub",
+    "url": "https://github.com/langchain-ai/langchain",
+    "generatedPost": "Insights on developer trends: langchain-ai/langchain - The agent engineering platform.. Check it out here: https://github.com/langchain-ai/langchain",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "firecrawl/firecrawl - The API to search, scrape, and interact with the web at scale. 🔥",
+    "source": "GitHub",
+    "url": "https://github.com/firecrawl/firecrawl",
+    "generatedPost": "Wasted enough time fighting brittle web scrapers. Firecrawl's API for web interaction 'at scale' sounds like the dream. Might actually ship that data product now.",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "Comfy-Org/ComfyUI - The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.",
+    "source": "GitHub",
+    "url": "https://github.com/Comfy-Org/ComfyUI",
+    "generatedPost": "Forget basic AI image generators. ComfyUI is a powerhouse: node-based GUI + backend for diffusion models. You get *real* control, not just prompts. This is how pros build custom AI workflows.",
+    "date": "2026-06-29"
+  },
+  {
+    "topic": "github/spec-kit - 💫 Toolkit to help you get started with Spec-Driven Development",
+    "source": "GitHub",
+    "url": "https://github.com/github/spec-kit",
+    "generatedPost": "Specs? Nah, usually too much process. But GitHub's `spec-kit` for Spec-Driven Dev actually looks like it could *cut* dev time, not add it. This might change how we build. Check it out: github.com/github/spec-kit",
+    "date": "2026-06-29"
+  }
+]
