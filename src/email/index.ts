@@ -133,6 +133,13 @@ export async function sendEmail(data: EmailData): Promise<boolean> {
   const textBody = compileTextEmail(data);
   const htmlBody = compileHtmlEmail(data);
 
+  const isGitHubActions = process.env.GITHUB_ACTIONS === 'true';
+  if (!isGitHubActions) {
+    logger.info(`[LOCAL DEVELOPMENT - SMTP Email Skipped] Subject: "${subject}"`);
+    logger.info('Live email triggers are disabled during local development to avoid test spam. Email preview is printed below:\n' + textBody);
+    return true;
+  }
+
   if (config.IS_DRY_RUN) {
     logger.info(`[DRY RUN - SMTP Email] To: ${config.GMAIL_EMAIL} | Subject: "${subject}"`);
     logger.info('Dry Run complete. Logged email preview below:\n' + textBody);

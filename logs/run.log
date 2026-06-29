@@ -670,3 +670,119 @@ Please retry in 39.908685289s. [{"@type":"type.googleapis.com/google.rpc.Help","
 [2026-06-29T13:13:32.329Z] [INFO] Successfully wrote 15 items to history.
 [2026-06-29T13:13:32.330Z] [INFO] History file updated successfully.
 [2026-06-29T13:13:32.331Z] [INFO] Daily workflow finished successfully in 248.51s.
+[2026-06-29T13:33:37.219Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-06-29T13:33:37.221Z] [INFO] Starting parallel data collection from all sources...
+[2026-06-29T13:33:37.222Z] [INFO] Fetching Hacker News top stories...
+[2026-06-29T13:33:37.252Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-06-29T13:33:37.253Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-06-29T13:33:37.257Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-06-29T13:33:37.257Z] [WARN] GITHUB_TOKEN is not set. GitHub search calls will be subject to strict public rate limits.
+[2026-06-29T13:33:37.257Z] [INFO] Running GitHub search query: "created:>2026-06-28 stars:>10"...
+[2026-06-29T13:33:37.900Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-06-29T13:33:37.901Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-06-29T13:33:37.921Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-06-29T13:33:38.162Z] [INFO] Fetched and filtered 14 repositories from query: "created:>2026-06-28 stars:>10"
+[2026-06-29T13:33:38.163Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-06-28 stars:>50"...
+[2026-06-29T13:33:38.901Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-06-28 stars:>50"
+[2026-06-29T13:33:38.902Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-06-28 stars:>100"...
+[2026-06-29T13:33:39.372Z] [INFO] Fetched and filtered 11 new articles from Dev.to tag: React.
+[2026-06-29T13:33:39.373Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-06-29T13:33:39.694Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-06-28 stars:>100"
+[2026-06-29T13:33:39.695Z] [INFO] Total unique GitHub repositories collected: 44
+[2026-06-29T13:33:40.084Z] [INFO] Successfully fetched and filtered 32 stories from Hacker News.
+[2026-06-29T13:33:40.418Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: JavaScript.
+[2026-06-29T13:33:40.418Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-06-29T13:33:40.828Z] [INFO] Fetched and filtered 10 new articles from Dev.to tag: AI.
+[2026-06-29T13:33:40.828Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-06-29T13:33:41.686Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: TypeScript.
+[2026-06-29T13:33:41.687Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-06-29T13:33:43.424Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-06-29T13:33:43.424Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-06-29T13:33:43.719Z] [INFO] Fetched and filtered 2 new articles from Dev.to tag: Flutter.
+[2026-06-29T13:33:43.719Z] [INFO] Successfully fetched and merged a total of 68 unique Dev.to articles.
+[2026-06-29T13:33:43.720Z] [INFO] Collected a total of 144 raw topics from all sources.
+[2026-06-29T13:33:43.720Z] [INFO] Merged duplicates: Reduced 144 topics to 144 unique topics.
+[2026-06-29T13:33:43.721Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-06-29T13:33:43.722Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert content filtering system.
+You are given a list of new candidate topics and a list..."
+[2026-06-29T13:33:43.722Z] [WARN] Invalid response from semantic filter. Falling back to simple URL match filtering.
+[2026-06-29T13:33:43.723Z] [INFO] Fallback URL filtering complete. Kept 130 of 144 topics.
+[2026-06-29T13:33:43.723Z] [INFO] Ranking and selecting top 3 topics from 130 candidate topics...
+[2026-06-29T13:33:43.727Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are an expert tech editor. Review the following list of trending topics:
+
+[
+  {
+    "index": 0,..."
+[2026-06-29T13:33:43.727Z] [WARN] Gemini ranking returned invalid results. Falling back to sorting by engagement score.
+[2026-06-29T13:33:43.728Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-06-29T13:33:43.728Z] [INFO] Top 3 topics selected: ["google-gemini/gemini-cli - An open-source AI agent that brings the power of Gemini directly into your terminal.","supabase/supabase - The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.","harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM."]
+[2026-06-29T13:33:43.729Z] [INFO] Generating single X post for topic: "google-gemini/gemini-cli - An open-source AI agent..."
+[2026-06-29T13:33:43.729Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:33:43.729Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:33:43.730Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:33:43.730Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:33:43.730Z] [INFO] Generating single X post for topic: "supabase/supabase - The Postgres development platf..."
+[2026-06-29T13:33:43.730Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:33:43.731Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:33:43.731Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:33:43.732Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:33:43.732Z] [INFO] Generating single X post for topic: "harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Ge..."
+[2026-06-29T13:33:43.732Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are generating a single high-engagement X (Twitter) post for iamatharv (Full Stack Developer) t..."
+[2026-06-29T13:33:43.733Z] [INFO] Running quality review loop for generated post...
+[2026-06-29T13:33:43.733Z] [INFO] [DRY RUN - Gemini JSON API] Prompt: "
+You are a strict QA Copyeditor for social media content.
+Analyze the following generated post about..."
+[2026-06-29T13:33:43.733Z] [INFO] Quality review result: Passed = undefined. Feedback: undefined
+[2026-06-29T13:33:43.734Z] [INFO] Preparing to send Today's X Posts email...
+[2026-06-29T13:33:43.735Z] [INFO] [LOCAL DEVELOPMENT - SMTP Email Skipped] Subject: "Today's X Posts"
+[2026-06-29T13:33:43.735Z] [INFO] Live email triggers are disabled during local development to avoid test spam. Email preview is printed below:
+================================================
+
+🔥 Topic #1
+
+Interesting update on google-gemini/gemini-cli - An open-source AI agent that brings the power of Gemini directly into your terminal.
+
+Insights on developer trends: google-gemini/gemini-cli - An open-source AI agent that brings the power of Gemini directly into your terminal.. Check it out here: https://github.com/google-gemini/gemini-cli
+
+https://github.com/google-gemini/gemini-cli
+
+Estimated Engagement Score: 75/100
+
+---
+
+🔥 Topic #2
+
+Interesting update on supabase/supabase - The Postgres development platform.
+
+Insights on developer trends: supabase/supabase - The Postgres development platform. Supabase gives you a dedicated Postgres database to build your web, mobile, and AI applications.. Check it out here: https://github.com/supabase/supabase
+
+https://github.com/supabase/supabase
+
+Estimated Engagement Score: 75/100
+
+---
+
+🔥 Topic #3
+
+Interesting update on harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.
+
+Insights on developer trends: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.. Check it out here: https://github.com/harry0703/MoneyPrinterTurbo
+
+https://github.com/harry0703/MoneyPrinterTurbo
+
+Estimated Engagement Score: 75/100
+
+================================================
+
+[2026-06-29T13:33:43.737Z] [INFO] Successfully wrote 18 items to history.
+[2026-06-29T13:33:43.737Z] [INFO] History file updated successfully.
+[2026-06-29T13:33:43.737Z] [INFO] Daily workflow finished successfully in 6.51s.
