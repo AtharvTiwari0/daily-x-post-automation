@@ -145,5 +145,26 @@
     "url": "https://dev.to/schiff_heimlich/your-ci-ran-code-it-should-not-have-and-you-cannot-prove-it-did-not-4ap4",
     "generatedPost": "Found this interesting update about \"Your CI ran code it should not have, and you cannot prove it did not\": https://dev.to/schiff_heimlich/your-ci-ran-code-it-should-not-have-and-you-cannot-prove-it-did-not-4ap4",
     "date": "2026-06-30"
+  },
+  {
+    "topic": "I Built a Coin Ledger That Guilts Customers Into Coming Back 🧇",
+    "source": "DevTo",
+    "url": "https://dev.to/akashpattnaik/i-built-a-coin-ledger-that-guilts-customers-into-coming-back-2a9d",
+    "generatedPost": "Turns out a \"simple\" loyalty points feature always wants to be an accounting ledger. Especially when you learn loss aversion (expiring coins) beats earning them. That's why one dev's 6-table, append-only system on Supabase is so compelling. No `points++` here.",
+    "date": "2026-06-30"
+  },
+  {
+    "topic": "100k lines of AI-ported Rust nobody can review is not an achievement",
+    "source": "DevTo",
+    "url": "https://dev.to/adioof/100k-lines-of-ai-ported-rust-nobody-can-review-is-not-an-achievement-3pf8",
+    "generatedPost": "AI ported 100k lines of TS to Rust in a month. Dev had 0 Rust knowledge. Folks calling it an achievement. I'm calling it a 100k-line liability. If your team can't review, maintain, or debug AI-generated code, you didn't ship value. You shipped future incidents.",
+    "date": "2026-06-30"
+  },
+  {
+    "topic": "After 20 Years in Software, AI Made Me Rethink What My Job Actually Is",
+    "source": "DevTo",
+    "url": "https://dev.to/jose_orgueira/after-20-years-in-software-ai-made-me-rethink-what-my-job-actually-is-2935",
+    "generatedPost": "We keep debating if AI replaces dev jobs. But the real game changer for experienced devs? It's not *coding faster*. It's ditching syntax battles to focus entirely on architecture, system design, and the gnarly 'should we even build this?' questions. Experience got a serious u...",
+    "date": "2026-06-30"
   }
 ]
