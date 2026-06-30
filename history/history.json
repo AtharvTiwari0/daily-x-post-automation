@@ -124,5 +124,26 @@
     "url": "https://github.com/harry0703/MoneyPrinterTurbo",
     "generatedPost": "Insights on developer trends: harry0703/MoneyPrinterTurbo - 利用AI大模型，一键生成高清短视频 Generate short videos with one click using AI LLM.. Check it out here: https://github.com/harry0703/MoneyPrinterTurbo",
     "date": "2026-06-29"
+  },
+  {
+    "topic": "Qwen 3.6 27B is the sweet spot for local development",
+    "source": "HackerNews",
+    "url": "https://quesma.com/blog/qwen-36-is-awesome/",
+    "generatedPost": "Found this interesting update about \"Qwen 3.6 27B is the sweet spot for local development\": https://quesma.com/blog/qwen-36-is-awesome/",
+    "date": "2026-06-30"
+  },
+  {
+    "topic": "what i learned intentionally breaking hydration in next.js",
+    "source": "DevTo",
+    "url": "https://dev.to/heytechomaima/what-i-learned-intentionally-breaking-hydration-in-nextjs-1l6h",
+    "generatedPost": "Found this interesting update about \"what i learned intentionally breaking hydration in next.js\": https://dev.to/heytechomaima/what-i-learned-intentionally-breaking-hydration-in-nextjs-1l6h",
+    "date": "2026-06-30"
+  },
+  {
+    "topic": "Your CI ran code it should not have, and you cannot prove it did not",
+    "source": "DevTo",
+    "url": "https://dev.to/schiff_heimlich/your-ci-ran-code-it-should-not-have-and-you-cannot-prove-it-did-not-4ap4",
+    "generatedPost": "Found this interesting update about \"Your CI ran code it should not have, and you cannot prove it did not\": https://dev.to/schiff_heimlich/your-ci-ran-code-it-should-not-have-and-you-cannot-prove-it-did-not-4ap4",
+    "date": "2026-06-30"
   }
 ]
