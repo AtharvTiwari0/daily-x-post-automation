@@ -166,5 +166,26 @@
     "url": "https://dev.to/jose_orgueira/after-20-years-in-software-ai-made-me-rethink-what-my-job-actually-is-2935",
     "generatedPost": "We keep debating if AI replaces dev jobs. But the real game changer for experienced devs? It's not *coding faster*. It's ditching syntax battles to focus entirely on architecture, system design, and the gnarly 'should we even build this?' questions. Experience got a serious u...",
     "date": "2026-06-30"
+  },
+  {
+    "topic": "Claude Code is steganographically marking requests",
+    "source": "HackerNews",
+    "url": "https://thereallo.dev/blog/claude-code-prompt-steganography",
+    "generatedPost": "Claude allegedly embeds steganographic marks in generated code. Think about that for a second. Your 'AI-generated' code might have invisible identifiers, creating a permanent data trail. What does that mean for ownership? For privacy? For trust?",
+    "date": "2026-07-01"
+  },
+  {
+    "topic": "I Made TS Compiler Graph MCP: 10x Fewer Tokens in Claude Code",
+    "source": "DevTo",
+    "url": "https://dev.to/samchon/i-made-ts-compiler-graph-mcp-10x-fewer-tokens-in-claude-code-1aea",
+    "generatedPost": "Prompt engineering for LLM code is token-inefficient. This new TS tool (ttsc/graph) cuts Claude's code context tokens by 10x. The trick: Less prose, more typed schemas for tool calls. A required schema field acts as a contract agents can't ignore. Smart. github.com/samchon/ttsc",
+    "date": "2026-07-01"
+  },
+  {
+    "topic": "Your Agent's Retries Are Double-Charging Your Users (and Every Eval Is Green)",
+    "source": "DevTo",
+    "url": "https://dev.to/saurav_bhattacharya/your-agents-retries-are-double-charging-your-users-and-every-eval-is-green-3ija",
+    "generatedPost": "Your agent double-charged a user. Evals are green. Model did nothing wrong. This isn't a prompt problem. It's an architecture fail: you need idempotency keys from your harness & unforgeable Tier 1 checks. Stop asking the LLM to solve fundamental system design.",
+    "date": "2026-07-01"
   }
 ]
