@@ -187,5 +187,26 @@
     "url": "https://dev.to/saurav_bhattacharya/your-agents-retries-are-double-charging-your-users-and-every-eval-is-green-3ija",
     "generatedPost": "Your agent double-charged a user. Evals are green. Model did nothing wrong. This isn't a prompt problem. It's an architecture fail: you need idempotency keys from your harness & unforgeable Tier 1 checks. Stop asking the LLM to solve fundamental system design.",
     "date": "2026-07-01"
+  },
+  {
+    "topic": "AWS Bets $1 Billion on Embedded AI Engineers — The Forward-Deployed Model Takes Over Enterprise AI",
+    "source": "DevTo",
+    "url": "https://dev.to/docdavkitty/aws-bets-1-billion-on-embedded-ai-engineers-the-forward-deployed-model-takes-over-enterprise-ai-lgi",
+    "generatedPost": "AI's promise: autonomous agents. Reality: AWS bets $1B+ on *embedded human engineers* to make agents work in enterprise. Turns out, the 'last mile' of AI isn't code, it's a services business. 'Build vs. buy' just got upgraded to 'build, buy, or embed.'",
+    "date": "2026-07-01"
+  },
+  {
+    "topic": "Attackers are hijacking exposed AI endpoints to run offensive operations. No exploit needed.",
+    "source": "DevTo",
+    "url": "https://dev.to/cyclopt_dimitrisk/attackers-are-hijacking-exposed-ai-endpoints-to-run-offensive-operations-no-exploit-needed-123d",
+    "generatedPost": "We spent a decade fixing exposed databases & S3 buckets. Now, with self-hosted AI like Ollama & LiteLLM, we're repeating those exact mistakes. Attackers aren't exploiting; they're using *your* unauthenticated endpoints as free compute for *their* offensive ops. Your IP, their...",
+    "date": "2026-07-01"
+  },
+  {
+    "topic": "The day my software collapsed in front of everyone",
+    "source": "DevTo",
+    "url": "https://dev.to/fromzerotoship/the-day-my-software-collapsed-in-front-of-everyone-43pg",
+    "generatedPost": "App broke. AI said 'hardware limit, nothing you can do.' Dev almost gave up. Then found a simple caching fix. App flew.\n\nThe 'limit' wasn't hardware, it was trusting the AI's initial 'impossible.' Never let a tool set your boundaries. Keep digging.",
+    "date": "2026-07-01"
   }
 ]
