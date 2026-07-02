@@ -229,5 +229,26 @@
     "url": "https://dev.to/sahland/lighthouse-gives-your-flutter-app-a-perfect-accessibility-score-its-lying-51f2",
     "generatedPost": "Interesting observation: Your Flutter web app can get a perfect accessibility score from Lighthouse. Turns out it's lying. Standard web tools like Lighthouse/axe-core are blind to Flutter's canvas. The DOM-less architecture means devs need entirely different tooling for compl...",
     "date": "2026-07-02"
+  },
+  {
+    "topic": "I Deleted My No-Code Automation Platform and Rewrote 34 Workflows in TypeScript",
+    "source": "DevTo",
+    "url": "https://dev.to/achiya-automation/i-deleted-my-no-code-automation-platform-and-rewrote-34-workflows-in-typescript-emh",
+    "generatedPost": "A dev moved 34 live no-code automations to TypeScript. Solo. With Claude Code. This kind of heavy migration used to be 'a team, over weeks'. Our ceiling for solo impact just disappeared. What's on *your* 'someday' list that just became today?",
+    "date": "2026-07-02"
+  },
+  {
+    "topic": "Share Everything Except the Route Tree: A Multi-Customer Monorepo with TanStack Router",
+    "source": "DevTo",
+    "url": "https://dev.to/cengizdonmez/share-everything-except-the-route-tree-a-multi-customer-monorepo-with-tanstack-router-2o5d",
+    "generatedPost": "Heard TanStack Router + monorepos is a pain for white-label? We used to `git clone` admin panels. The trick: brutal simplicity. Share ALL from `@bo/core` (pages, guards, validators). EXCEPT `routeTree.gen.ts`. Duplicate *that* minimal wiring. Big win for white-label SaaS.",
+    "date": "2026-07-02"
+  },
+  {
+    "topic": "I built a 163-page paycheck calculator that costs $0 a month to run",
+    "source": "DevTo",
+    "url": "https://dev.to/starknight/i-built-a-163-page-paycheck-calculator-that-costs-0-a-month-to-run-355d",
+    "generatedPost": "Saw a developer build a 163-page paycheck calculator for $0/month. The magic? Deeply understanding tax rules, encoding them in TS, then using Next.js static gen. No backend, no APIs needed. It's a masterclass in 'get the data right' and let the frontend scale.",
+    "date": "2026-07-02"
   }
 ]
