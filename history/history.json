@@ -208,5 +208,26 @@
     "url": "https://dev.to/fromzerotoship/the-day-my-software-collapsed-in-front-of-everyone-43pg",
     "generatedPost": "App broke. AI said 'hardware limit, nothing you can do.' Dev almost gave up. Then found a simple caching fix. App flew.\n\nThe 'limit' wasn't hardware, it was trusting the AI's initial 'impossible.' Never let a tool set your boundaries. Keep digging.",
     "date": "2026-07-01"
+  },
+  {
+    "topic": "6 Security Holes We Keep Finding in Vibe-Coded Apps",
+    "source": "DevTo",
+    "url": "https://dev.to/jakub_inithouse/6-security-holes-we-keep-finding-in-vibe-coded-apps-4bnb",
+    "generatedPost": "AI-generated code consistently hits the same basic security holes. It's not the LLM's 'fault' – it's ours. We skip the essential human review because the output *looks* done. This speed-for-security trade-off is becoming a predictable pattern.",
+    "date": "2026-07-02"
+  },
+  {
+    "topic": "I let my AI agents rewrite their own prompts. The hard part was stopping them from getting worse.",
+    "source": "DevTo",
+    "url": "https://dev.to/studiomeyer_io/i-let-my-ai-agents-rewrite-their-own-prompts-the-hard-part-was-stopping-them-from-getting-worse-46ed",
+    "generatedPost": "AI agents rewriting their own prompts? Demos make it look simple. But the 'evolution loop' is only a third of the work. The real engineering battle is building robust *gates* to prevent them from quietly degrading. Reflection proposes. The gate disposes.",
+    "date": "2026-07-02"
+  },
+  {
+    "topic": "Lighthouse gives your Flutter app a perfect accessibility score. It's lying",
+    "source": "DevTo",
+    "url": "https://dev.to/sahland/lighthouse-gives-your-flutter-app-a-perfect-accessibility-score-its-lying-51f2",
+    "generatedPost": "Interesting observation: Your Flutter web app can get a perfect accessibility score from Lighthouse. Turns out it's lying. Standard web tools like Lighthouse/axe-core are blind to Flutter's canvas. The DOM-less architecture means devs need entirely different tooling for compl...",
+    "date": "2026-07-02"
   }
 ]
