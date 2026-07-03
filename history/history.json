@@ -250,5 +250,26 @@
     "url": "https://dev.to/starknight/i-built-a-163-page-paycheck-calculator-that-costs-0-a-month-to-run-355d",
     "generatedPost": "Saw a developer build a 163-page paycheck calculator for $0/month. The magic? Deeply understanding tax rules, encoding them in TS, then using Next.js static gen. No backend, no APIs needed. It's a masterclass in 'get the data right' and let the frontend scale.",
     "date": "2026-07-02"
+  },
+  {
+    "topic": "Local LLM vs Claude: Benchmarking qwen3-coder:30b as a Production Agent Backend",
+    "source": "DevTo",
+    "url": "https://dev.to/sikamikanikobg/local-llm-vs-claude-benchmarking-qwen3-coder30b-as-a-production-agent-backend-482b",
+    "generatedPost": "Local LLMs: 5,150x cheaper than Claude for agents. Wild. But drop qwen3-coder:30b into a 90-tool prod environment? Quality tanks from 100% (small benchmark) to 22.8%. Cost doesn't matter if it can't handle real complexity. The tool surface problem is real.",
+    "date": "2026-07-03"
+  },
+  {
+    "topic": "I Scored 10,000 Job Listings a Day With GPT-4. Here's What Broke",
+    "source": "DevTo",
+    "url": "https://dev.to/abdul___rehman/i-scored-10000-job-listings-a-day-with-gpt-4-heres-what-broke-1o7d",
+    "generatedPost": "LLMs confidently invent data for optional fields. To prevent silent hallucination (e.g., salary ranges) in a 10k job listing RAG pipeline, a dev's fix: add `has_field: boolean` *before* the optional field in the schema. Simple trick, huge data integrity win.",
+    "date": "2026-07-03"
+  },
+  {
+    "topic": "The Developer's Guide to Passive Income with Affiliate Marketing: How I Built a Compounding Revenue Stream With AI APIs",
+    "source": "DevTo",
+    "url": "https://dev.to/gentlelogic/the-developers-guide-to-passive-income-with-affiliate-marketing-how-i-built-a-compounding-revenue-2ng3",
+    "generatedPost": "Developers often ignore affiliate marketing, writing it off as spam. Big mistake. Treat AI API referrals like a growth hacker — track LTV, optimize funnels, watch the compounding. It's just dev work applied differently.",
+    "date": "2026-07-03"
   }
 ]
