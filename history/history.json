@@ -271,5 +271,26 @@
     "url": "https://dev.to/gentlelogic/the-developers-guide-to-passive-income-with-affiliate-marketing-how-i-built-a-compounding-revenue-2ng3",
     "generatedPost": "Developers often ignore affiliate marketing, writing it off as spam. Big mistake. Treat AI API referrals like a growth hacker — track LTV, optimize funnels, watch the compounding. It's just dev work applied differently.",
     "date": "2026-07-03"
+  },
+  {
+    "topic": "TypeScript Didn't Win the Language War. AI Did It For Them.",
+    "source": "DevTo",
+    "url": "https://dev.to/tuba_mughal_2fd16fd2c7978/typescript-didnt-win-the-language-war-ai-did-it-for-them-79l",
+    "generatedPost": "That TypeScript vs JS debate? AI quietly made it irrelevant. LLMs are absolute machines for type mismatches. Suddenly, static typing isn't about preference; it's your cheapest insurance against AI-introduced bugs. Your type checker: the essential AI guardrail.",
+    "date": "2026-07-04"
+  },
+  {
+    "topic": "How My Fake MCP Server Tricked an AI Into Calling a Tool It Refused Me",
+    "source": "DevTo",
+    "url": "https://dev.to/oopssec-store/how-my-fake-mcp-server-tricked-an-ai-into-calling-a-tool-it-refused-me-3ch3",
+    "generatedPost": "AI agents blindly trust tool responses. This 'fake MCP server' hack shows how a malicious tool's output can force an LLM to call restricted functions, completely bypassing its system prompt and access controls. Your prompt engineering is moot if tool output is gospel.",
+    "date": "2026-07-04"
+  },
+  {
+    "topic": "yamadashy/repomix - 📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for when you need to feed your codebase to Large Language Models (LLMs) or other AI tools like Claude, ChatGPT, DeepSeek, Perplexity, Gemini, Gemma, Llama, Grok, and more.",
+    "source": "GitHub",
+    "url": "https://github.com/yamadashy/repomix",
+    "generatedPost": "Repomix compresses entire repos into a single file *for LLMs*. We're not just writing code for humans anymore; we're actively packaging it for AI interpretation. The 'context window' is becoming a core compilation target for dev tooling.",
+    "date": "2026-07-04"
   }
 ]
