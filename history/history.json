@@ -292,5 +292,26 @@
     "url": "https://github.com/yamadashy/repomix",
     "generatedPost": "Repomix compresses entire repos into a single file *for LLMs*. We're not just writing code for humans anymore; we're actively packaging it for AI interpretation. The 'context window' is becoming a core compilation target for dev tooling.",
     "date": "2026-07-04"
+  },
+  {
+    "topic": "The HTTP QUERY method (RFC 10008) is here — and caching it correctly is harder than it looks",
+    "source": "DevTo",
+    "url": "https://dev.to/hardikgoel/the-http-query-method-rfc-10008-is-here-and-caching-it-correctly-is-harder-than-it-looks-2he6",
+    "generatedPost": "HTTP's new `QUERY` method is GET with a body. Finally, complex reads don't need POST hacks. But the catch: correct caching means keying on the *body*. Fail that, and one client gets another's data. That's a gnarly data integrity bug waiting to ship.",
+    "date": "2026-07-05"
+  },
+  {
+    "topic": "A coding agent is just a loop — here's the whole thing, zero dependencies",
+    "source": "DevTo",
+    "url": "https://dev.to/seydi_charyev_3772861015f/a-coding-agent-is-just-a-loop-heres-the-whole-thing-zero-dependencies-1918",
+    "generatedPost": "Everyone calling 'AI agent' frameworks feels smart. The uncomfortable truth? It's just a loop: ask, run tool, feed back, repeat. The *real* engineering challenge isn't the loop, it's max steps, tool failure as data, and sandboxing. Frameworks hide this until your bill explodes.",
+    "date": "2026-07-05"
+  },
+  {
+    "topic": "TypeScript 6.0 `isolatedDeclarations`: What It Actually Replaces and Why It Matters",
+    "source": "DevTo",
+    "url": "https://dev.to/jsmanifest/typescript-60-isolateddeclarations-what-it-actually-replaces-and-why-it-matters-716",
+    "generatedPost": "TS 6.0's `isolatedDeclarations` is finally here. It ditches type inference for `.d.ts` generation to unlock parallel builds. Think monorepo build times going from minutes to *seconds*. Your cost: explicit types everywhere on your public API. Brutal, but brilliant for scale.",
+    "date": "2026-07-05"
   }
 ]
