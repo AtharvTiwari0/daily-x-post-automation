@@ -313,5 +313,26 @@
     "url": "https://dev.to/jsmanifest/typescript-60-isolateddeclarations-what-it-actually-replaces-and-why-it-matters-716",
     "generatedPost": "TS 6.0's `isolatedDeclarations` is finally here. It ditches type inference for `.d.ts` generation to unlock parallel builds. Think monorepo build times going from minutes to *seconds*. Your cost: explicit types everywhere on your public API. Brutal, but brilliant for scale.",
     "date": "2026-07-05"
+  },
+  {
+    "topic": "I got tired of watching 40 Kalshi tabs, so I built a self-hosted signal monitor",
+    "source": "DevTo",
+    "url": "https://dev.to/lweiss01/i-got-tired-of-watching-40-kalshi-tabs-so-i-built-a-self-hosted-signal-monitor-4i33",
+    "generatedPost": "Dev built a Kalshi monitor that touches your private key. Trust solution: self-hosted Python source, but an EXE for convenience.\n\nThat's a fascinating balance with local credentials. Where do *you* draw the line between convenience and auditing code?",
+    "date": "2026-07-06"
+  },
+  {
+    "topic": "The part of a PaaS you use most should have the least power — so I built Mooring",
+    "source": "DevTo",
+    "url": "https://dev.to/daboss2003/the-part-of-a-paas-you-use-most-should-have-the-least-power-so-i-built-mooring-5b1a",
+    "generatedPost": "Your PaaS dashboard, the part you *always* look at, often holds too much power. Think 'read plane' vs 'write plane'. This project, Mooring, challenges that by strictly separating them. An overdue idea for self-hosted infra security.\nhttps://dev.to/daboss2003/the-part-of-a-paa...",
+    "date": "2026-07-06"
+  },
+  {
+    "topic": "Why JSON Schema Isn't Enough for Production AI",
+    "source": "DevTo",
+    "url": "https://dev.to/aviasoletechnologies/why-json-schema-isnt-enough-for-production-ai-4bfc",
+    "generatedPost": "Perfectly valid JSON from an LLM? Doesn't mean it's *right*.\n\nMany of us assumed schema validation meant correct data. But JSON Schema guarantees structure, not truth.\n\nThis distinction changes everything for building reliable AI systems. What's your take?",
+    "date": "2026-07-06"
   }
 ]
