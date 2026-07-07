@@ -334,5 +334,26 @@
     "url": "https://dev.to/aviasoletechnologies/why-json-schema-isnt-enough-for-production-ai-4bfc",
     "generatedPost": "Perfectly valid JSON from an LLM? Doesn't mean it's *right*.\n\nMany of us assumed schema validation meant correct data. But JSON Schema guarantees structure, not truth.\n\nThis distinction changes everything for building reliable AI systems. What's your take?",
     "date": "2026-07-06"
+  },
+  {
+    "topic": "I Built a Private Cloud That Runs an AI Safety System Under My Desk",
+    "source": "DevTo",
+    "url": "https://dev.to/sumitga/i-built-a-private-cloud-that-runs-an-ai-safety-system-under-my-desk-3g5g",
+    "generatedPost": "This dev’s private cloud for AI safety uses an obvious, often ignored rule: not all data deserves the same promises. Hot lane for critical alarms (never drops), Warm for bulk telemetry (degrades), Cold for AI (deduped). What if your architecture made these explicit trade-offs?",
+    "date": "2026-07-07"
+  },
+  {
+    "topic": "My React Search Box Froze on Every Keystroke. I Fixed It by Stealing Python's #1 Scope Rule.",
+    "source": "DevTo",
+    "url": "https://dev.to/tahosin/my-react-search-box-froze-on-every-keystroke-i-fixed-it-by-stealing-pythons-1-scope-rule-k2i",
+    "generatedPost": "My React search box choked on every keystroke. My first reflex: `useMemo`, `useCallback`, `React.memo` all the things! Nah. Just dropped the state down where it belonged. Python's \"keep locals local\" rule saved my dashboard from 142ms renders down to 4ms. Stop hoisting noisy...",
+    "date": "2026-07-07"
+  },
+  {
+    "topic": "I gave an LLM agent write access to my cloud drive. Three bugs taught me how to constrain it.",
+    "source": "DevTo",
+    "url": "https://dev.to/fancy39_9841cbc02f99f729c/i-gave-an-llm-agent-write-access-to-my-cloud-drive-three-bugs-taught-me-how-to-constrain-it-42nd",
+    "generatedPost": "If you're building LLM agents with write access to anything real: don't trust the prompt. A dev's experience taught me you need deterministic plumbing around the probabilistic core. It gates every number, owns irreversible actions. Surprises *will* happen. Make them cheap.",
+    "date": "2026-07-07"
   }
 ]
