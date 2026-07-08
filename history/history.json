@@ -355,5 +355,26 @@
     "url": "https://dev.to/fancy39_9841cbc02f99f729c/i-gave-an-llm-agent-write-access-to-my-cloud-drive-three-bugs-taught-me-how-to-constrain-it-42nd",
     "generatedPost": "If you're building LLM agents with write access to anything real: don't trust the prompt. A dev's experience taught me you need deterministic plumbing around the probabilistic core. It gates every number, owns irreversible actions. Surprises *will* happen. Make them cheap.",
     "date": "2026-07-07"
+  },
+  {
+    "topic": "Your LLM Judge Needs a Test Suite",
+    "source": "DevTo",
+    "url": "https://dev.to/michaeltuszynski/your-llm-judge-needs-a-test-suite-41oh",
+    "generatedPost": "Shipping LLM judges to prod on 'vibes' is wild. We test payment systems rigorously, but a critical LLM grader? Nah, just deploy. These models *drift*. Their behavior is a production dependency. Regression tests, wired into CI, are non-negotiable. Stop relying on users for QA.",
+    "date": "2026-07-08"
+  },
+  {
+    "topic": "I Built an AI-Powered Education Platform as a Solo Founder - Here's My Full Stack",
+    "source": "DevTo",
+    "url": "https://dev.to/jackhan312/i-built-an-ai-powered-education-platform-as-a-solo-founder-heres-my-full-stack-3557",
+    "generatedPost": "Interesting take from a solo founder shipping an AI education platform in China: They used Koa *with* Next.js, running both on Vercel. Why? WeChat's ecosystem integration needed a dedicated backend beyond `route.ts`. Sometimes, a 'monolith on the side' is the pragmatic choice.",
+    "date": "2026-07-08"
+  },
+  {
+    "topic": "Why Your Images Are Killing Your Core Web Vitals (and How I Fixed It in One Afternoon)",
+    "source": "DevTo",
+    "url": "https://dev.to/muhayminbinmehmood/why-your-images-are-killing-your-core-web-vitals-and-how-i-fixed-it-in-one-afternoon-47mm",
+    "generatedPost": "Devs profile JS bundles for performance, but the real silent killer? Images. Often 70% of page weight, crushing LCP. WebP/AVIF are 80% smaller than JPEG, but bulk converting hundreds is a royal pain. What's your automated workflow? (Built a free tool for this: BatchSet)",
+    "date": "2026-07-08"
   }
 ]
