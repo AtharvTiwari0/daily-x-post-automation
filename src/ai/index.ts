@@ -3,21 +3,33 @@ import { logger } from '../logger';
 import { SINGLE_POST_GENERATION_PROMPT, SINGLE_POST_QUALITY_REVIEW_PROMPT, SYSTEM_INSTRUCTION_BASE } from '../prompts/templates';
 
 export interface GeneratedContent {
-  whyItMatters: string;
+  engineeringInsight: string;
+  whyDevelopersCare: string;
+  businessImplication: string;
+  strongerHook: string;
   xPost: string;
+  mediaSuggestion: string;
+  imagePrompt: string;
+  hashtags: string[];
   estimatedEngagementScore: number;
 }
 
 interface RawGenerationResult {
-  whyItMatters: string;
+  engineeringInsight: string;
+  whyDevelopersCare: string;
+  businessImplication: string;
+  strongerHook: string;
   xPost: string;
+  mediaSuggestion: string;
+  imagePrompt: string;
+  hashtags: string[];
   estimatedEngagementScore: number;
 }
 
 interface QualityReviewResult {
   passed: boolean;
   feedback: string;
-  correctedVersion: string | null;
+  correctedVersion: RawGenerationResult | null;
 }
 
 /**
@@ -60,32 +72,58 @@ export async function generateAndReviewPosts(
     // Return mock/fallback content
     const fallbackText = `Found this interesting update about "${topic.title}": ${topic.url}`;
     return {
-      whyItMatters: `This details a new development regarding ${topic.title}.`,
+      engineeringInsight: 'A new development is changing the dev landscape.',
+      whyDevelopersCare: 'It streamlines development workflows.',
+      businessImplication: 'Faster time to market and reduced compute cost.',
+      strongerHook: `The truth about ${topic.title}`,
       xPost: enforceLengthLimit(fallbackText),
+      mediaSuggestion: 'Comparison',
+      imagePrompt: 'A programmer analyzing data on a computer screen, clean vector illustration',
+      hashtags: ['coding', 'webdev', 'softwareengineering', 'developer', 'tech'],
       estimatedEngagementScore: 70
     };
   }
 
+  let engineeringInsight = (rawGen?.engineeringInsight || `Interesting engineering details behind ${topic.title}.`).trim();
+  let whyDevelopersCare = (rawGen?.whyDevelopersCare || `It streamlines development workflows.`).trim();
+  let businessImplication = (rawGen?.businessImplication || `Improves time-to-market.`).trim();
+  let strongerHook = (rawGen?.strongerHook || topic.title).trim();
   let xPost = cleanPostText(rawGen?.xPost || `Insights on developer trends: ${topic.title}. Check it out here: ${topic.url}`);
-  let whyItMatters = (rawGen?.whyItMatters || `Interesting update on ${topic.title}.`).trim();
+  let mediaSuggestion = (rawGen?.mediaSuggestion || 'None').trim();
+  let imagePrompt = (rawGen?.imagePrompt || 'A programmer analyzing data on a computer screen, clean vector illustration').trim();
+  let hashtags = Array.isArray(rawGen?.hashtags) ? rawGen.hashtags.map(t => t.trim().toLowerCase()) : ['coding', 'webdev', 'tech'];
   let estimatedEngagementScore = Number(rawGen?.estimatedEngagementScore || 75);
-
-  // Enforce 1-sentence limit on whyItMatters
-  if (whyItMatters.includes('.') && whyItMatters.indexOf('.') < whyItMatters.length - 1) {
-    whyItMatters = whyItMatters.split('.')[0] + '.';
-  }
 
   // 2. Quality review loop (Self-review)
   logger.info(`Running quality review loop for generated post...`);
   try {
-    const reviewPrompt = SINGLE_POST_QUALITY_REVIEW_PROMPT(topic.title, xPost, whyItMatters);
+    const draft = {
+      engineeringInsight,
+      whyDevelopersCare,
+      businessImplication,
+      strongerHook,
+      xPost,
+      mediaSuggestion,
+      imagePrompt,
+      hashtags
+    };
+    const reviewPrompt = SINGLE_POST_QUALITY_REVIEW_PROMPT(topic.title, draft);
     const review = await generateJSON<QualityReviewResult>(reviewPrompt, systemInstruction);
     
     if (review) {
       logger.info(`Quality review result: Passed = ${review.passed}. Feedback: ${review.feedback}`);
       if (!review.passed && review.correctedVersion) {
-        logger.info(`Applying Gemini corrected version for the post.`);
-        xPost = cleanPostText(review.correctedVersion);
+        logger.info(`Applying Gemini corrected version for the post and insights.`);
+        const corrected = review.correctedVersion;
+        engineeringInsight = (corrected.engineeringInsight || engineeringInsight).trim();
+        whyDevelopersCare = (corrected.whyDevelopersCare || whyDevelopersCare).trim();
+        businessImplication = (corrected.businessImplication || businessImplication).trim();
+        strongerHook = (corrected.strongerHook || strongerHook).trim();
+        xPost = cleanPostText(corrected.xPost || xPost);
+        mediaSuggestion = (corrected.mediaSuggestion || mediaSuggestion).trim();
+        imagePrompt = (corrected.imagePrompt || imagePrompt).trim();
+        hashtags = Array.isArray(corrected.hashtags) ? corrected.hashtags.map(t => t.trim().toLowerCase()) : hashtags;
+        estimatedEngagementScore = Number(corrected.estimatedEngagementScore || estimatedEngagementScore);
       }
     }
   } catch (err) {
@@ -96,8 +134,14 @@ export async function generateAndReviewPosts(
   xPost = enforceLengthLimit(xPost);
 
   return {
-    whyItMatters,
+    engineeringInsight,
+    whyDevelopersCare,
+    businessImplication,
+    strongerHook,
     xPost,
+    mediaSuggestion,
+    imagePrompt,
+    hashtags,
     estimatedEngagementScore
   };
 }

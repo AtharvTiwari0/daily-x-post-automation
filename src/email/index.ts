@@ -24,10 +24,16 @@ function compileTextEmail(data: EmailData): string {
   body += `================================================\n\n`;
 
   data.topics.forEach((item, index) => {
-    body += `🔥 Topic #${index + 1}\n\n`;
-    body += `${item.content.whyItMatters}\n\n`;
-    body += `${item.content.xPost}\n\n`;
-    body += `${item.selection.topic.url}\n\n`;
+    body += `🔥 Topic #${index + 1}: ${item.selection.topic.title}\n\n`;
+    body += `💡 Stronger Hook: ${item.content.strongerHook}\n\n`;
+    body += `🛠️ Surprising Engineering Insight:\n${item.content.engineeringInsight}\n\n`;
+    body += `🧑‍💻 Why Developers Care:\n${item.content.whyDevelopersCare}\n\n`;
+    body += `💼 Business Implication:\n${item.content.businessImplication}\n\n`;
+    body += `📝 Ready-to-post X Post:\n${item.content.xPost}\n\n`;
+    body += `🎨 Media Suggestion: ${item.content.mediaSuggestion}\n`;
+    body += `📸 Image Prompt: ${item.content.imagePrompt}\n`;
+    body += `🏷️ Hashtags: ${item.content.hashtags.map(h => `#${h}`).join(' ')}\n\n`;
+    body += `Link: ${item.selection.topic.url}\n`;
     body += `Estimated Engagement Score: ${item.content.estimatedEngagementScore}/100\n\n`;
     
     if (index < data.topics.length - 1) {
@@ -47,41 +53,93 @@ function compileHtmlEmail(data: EmailData): string {
   let topicsHtml = '';
 
   data.topics.forEach((item, index) => {
+    const hashtagsHtml = item.content.hashtags
+      .map(tag => `<span style="display: inline-block; background-color: #e8f5fe; color: #1da1f2; padding: 3px 8px; margin: 2px; border-radius: 12px; font-size: 12px; font-weight: 500;">#${tag}</span>`)
+      .join(' ');
+
     topicsHtml += `
-      <div style="margin-bottom: 24px; border: 1px solid #e1e8ed; border-radius: 12px; overflow: hidden; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-        <!-- Header / Topic Title -->
-        <div style="background-color: #0f1419; padding: 16px 20px; border-bottom: 1px solid #e1e8ed;">
-          <div style="font-size: 18px; font-weight: bold; color: #ffffff; display: flex; align-items: center;">
-            <span style="margin-right: 8px;">🔥</span> Topic #${index + 1}: ${item.selection.topic.title.split(' - ')[0]}
+      <div style="margin-bottom: 32px; border: 1px solid #e1e8ed; border-radius: 16px; overflow: hidden; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        <!-- Header -->
+        <div style="background-color: #0f1419; padding: 18px 24px; border-bottom: 1px solid #1f2937;">
+          <div style="font-size: 16px; font-weight: 600; color: #1da1f2; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Topic #${index + 1}</div>
+          <div style="font-size: 19px; font-weight: 800; color: #ffffff; line-height: 1.3;">
+            ${item.selection.topic.title}
           </div>
         </div>
         
-        <div style="padding: 20px 24px;">
-          <!-- Why it matters -->
-          <div style="margin-bottom: 18px; font-size: 14px; color: #657786; font-style: italic; line-height: 1.5; border-left: 3px solid #ffad1f; padding-left: 12px;">
-            <strong>Why it matters:</strong> ${item.content.whyItMatters}
+        <div style="padding: 24px;">
+          <!-- Stronger Hook Suggestion -->
+          <div style="margin-bottom: 20px; padding: 12px 16px; background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px dashed #f59e0b; border-radius: 8px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #b45309; margin-bottom: 4px; letter-spacing: 0.5px;">⚡ Stronger Hook Suggestion:</div>
+            <div style="font-size: 14px; font-weight: 700; color: #78350f;">"${item.content.strongerHook}"</div>
           </div>
 
-          <!-- The ready-to-post X Post (mono styled for copy-paste) -->
-          <div style="margin-bottom: 18px; padding: 16px; background-color: #f8f9fa; border: 1px solid #e1e8ed; border-radius: 8px; position: relative;">
-            <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; color: #1da1f2; margin-bottom: 8px; letter-spacing: 0.5px;">Ready-to-post X Post:</div>
-            <p style="margin: 0; color: #0f1419; font-size: 15px; line-height: 1.5; font-family: 'Courier New', Courier, monospace; white-space: pre-wrap;">${item.content.xPost}</p>
-            <div style="margin-top: 10px; font-size: 11px; color: #888888; text-align: right;">
+          <!-- Hidden Engineering Insight -->
+          <div style="margin-bottom: 16px; border-left: 4px solid #3b82f6; padding-left: 14px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; color: #3b82f6; margin-bottom: 4px; letter-spacing: 0.5px;">🛠️ Surprising Engineering Insight:</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #1f2937; font-weight: 500;">
+              ${item.content.engineeringInsight}
+            </div>
+          </div>
+
+          <!-- Why Developers Care -->
+          <div style="margin-bottom: 16px; border-left: 4px solid #10b981; padding-left: 14px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; color: #10b981; margin-bottom: 4px; letter-spacing: 0.5px;">🧑‍💻 Why Developers Care:</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #1f2937;">
+              ${item.content.whyDevelopersCare}
+            </div>
+          </div>
+
+          <!-- Business Implication -->
+          <div style="margin-bottom: 20px; border-left: 4px solid #8b5cf6; padding-left: 14px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: bold; color: #8b5cf6; margin-bottom: 4px; letter-spacing: 0.5px;">💼 Business Implication:</div>
+            <div style="font-size: 14px; line-height: 1.5; color: #1f2937;">
+              ${item.content.businessImplication}
+            </div>
+          </div>
+
+          <!-- Ready to Publish X Post -->
+          <div style="margin-bottom: 20px; padding: 18px; background-color: #f8f9fa; border: 1px solid #e1e8ed; border-radius: 12px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #1da1f2; margin-bottom: 10px; letter-spacing: 0.5px;">📝 Ready-to-post X Post (under 280 chars):</div>
+            <p style="margin: 0; color: #0f1419; font-size: 15px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; white-space: pre-wrap;">${item.content.xPost}</p>
+            <div style="margin-top: 12px; font-size: 11px; color: #657786; text-align: right; font-weight: bold;">
               ${item.content.xPost.length} / 280 characters
             </div>
           </div>
 
-          <!-- Bottom details -->
-          <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px;">
+          <!-- Media suggestion & Image Prompt -->
+          <div style="margin-bottom: 20px; padding: 14px; background-color: #f3f4f6; border-radius: 8px;">
+            <div style="margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-size: 12px; font-weight: bold; color: #4b5563;">🎨 Media Recommendation:</span>
+              <span style="display: inline-block; background-color: #1f2937; color: #ffffff; padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; text-transform: uppercase;">
+                ${item.content.mediaSuggestion}
+              </span>
+            </div>
+            <div style="border-top: 1px solid #e5e7eb; padding-top: 10px;">
+              <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #6b7280; margin-bottom: 4px; letter-spacing: 0.5px;">📸 Image Prompt:</div>
+              <div style="font-size: 13px; color: #4b5563; font-style: italic; line-height: 1.4;">
+                "${item.content.imagePrompt}"
+              </div>
+            </div>
+          </div>
+
+          <!-- Hashtags -->
+          <div style="margin-bottom: 20px;">
+            <div style="font-size: 11px; text-transform: uppercase; font-weight: 800; color: #657786; margin-bottom: 6px; letter-spacing: 0.5px;">🏷️ Hashtags (5-8):</div>
+            <div>${hashtagsHtml}</div>
+          </div>
+
+          <!-- Footer/Action details -->
+          <table style="width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 12px; border-top: 1px solid #f3f4f6; padding-top: 12px;">
             <tr>
-              <td style="padding: 6px 0; color: #657786;"><strong>Source Link:</strong></td>
-              <td style="padding: 6px 0; text-align: right;">
+              <td style="padding: 10px 0; color: #657786;"><strong>Source Link:</strong></td>
+              <td style="padding: 10px 0; text-align: right;">
                 <a href="${item.selection.topic.url}" target="_blank" style="color: #1da1f2; text-decoration: none; font-weight: bold;">Original Article &rarr;</a>
               </td>
             </tr>
             <tr>
-              <td style="padding: 6px 0; color: #657786;"><strong>Estimated Engagement:</strong></td>
-              <td style="padding: 6px 0; text-align: right; color: #1da1f2; font-weight: bold; font-size: 14px;">
+              <td style="padding: 6px 0; color: #657786;"><strong>Estimated Engagement Score:</strong></td>
+              <td style="padding: 6px 0; text-align: right; color: #1da1f2; font-weight: bold; font-size: 15px;">
                 ${item.content.estimatedEngagementScore}/100
               </td>
             </tr>

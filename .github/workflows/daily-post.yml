@@ -2,8 +2,8 @@ name: Daily AI X Post Automation
 
 on:
   schedule:
-    # 2:40 PM IST is 9:10 AM UTC (IST is UTC + 5:30)
-    - cron: '10 9 * * *'
+    # 12:00 PM IST is 6:30 AM UTC (IST is UTC + 5:30)
+    - cron: '30 6 * * *'
   workflow_dispatch: # Enable manual run from GitHub UI
 
 jobs:
