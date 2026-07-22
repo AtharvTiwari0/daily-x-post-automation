@@ -2235,3 +2235,97 @@ Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For m
     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
 [2026-07-21T09:14:11.388Z] [WARN] Skipped updating history as email delivery failed.
 [2026-07-21T09:14:11.388Z] [INFO] Daily workflow finished successfully in 242.21s.
+[2026-07-22T09:09:59.671Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-07-22T09:09:59.672Z] [INFO] Starting parallel data collection from all sources...
+[2026-07-22T09:09:59.672Z] [INFO] Fetching Hacker News top stories...
+[2026-07-22T09:09:59.713Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-07-22T09:09:59.713Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-07-22T09:09:59.716Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-07-22T09:09:59.716Z] [INFO] Running GitHub search query: "created:>2026-07-21 stars:>10"...
+[2026-07-22T09:09:59.863Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-07-22T09:09:59.863Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-07-22T09:09:59.868Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-07-22T09:09:59.967Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-07-22T09:09:59.967Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-07-22T09:10:00.247Z] [INFO] Successfully fetched and filtered 35 stories from Hacker News.
+[2026-07-22T09:10:00.417Z] [INFO] Fetched and filtered 6 repositories from query: "created:>2026-07-21 stars:>10"
+[2026-07-22T09:10:00.417Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-07-21 stars:>50"...
+[2026-07-22T09:10:00.456Z] [INFO] Fetched and filtered 10 new articles from Dev.to tag: JavaScript.
+[2026-07-22T09:10:00.456Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-07-22T09:10:00.938Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-07-21 stars:>50"
+[2026-07-22T09:10:00.938Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-07-21 stars:>100"...
+[2026-07-22T09:10:01.185Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: AI.
+[2026-07-22T09:10:01.185Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-07-22T09:10:01.450Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-07-21 stars:>100"
+[2026-07-22T09:10:01.451Z] [INFO] Total unique GitHub repositories collected: 36
+[2026-07-22T09:10:01.947Z] [INFO] Fetched and filtered 10 new articles from Dev.to tag: TypeScript.
+[2026-07-22T09:10:01.948Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-07-22T09:10:02.510Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: Next.js.
+[2026-07-22T09:10:02.511Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-07-22T09:10:02.697Z] [INFO] Fetched and filtered 7 new articles from Dev.to tag: Flutter.
+[2026-07-22T09:10:02.698Z] [INFO] Successfully fetched and merged a total of 72 unique Dev.to articles.
+[2026-07-22T09:10:02.698Z] [INFO] Collected a total of 143 raw topics from all sources.
+[2026-07-22T09:10:02.698Z] [INFO] Merged duplicates: Reduced 143 topics to 143 unique topics.
+[2026-07-22T09:10:02.698Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-07-22T09:11:14.957Z] [INFO] Semantic filtering complete. Kept 109 of 143 candidate topics.
+[2026-07-22T09:11:14.957Z] [INFO] Ranking and selecting top 3 topics from 109 candidate topics...
+[2026-07-22T09:11:24.725Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-07-22T09:11:30.384Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-07-22T09:11:32.575Z] [ERROR] Gemini JSON Generation (gemini-2.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 250000, model: gemini-2.5-flash
+Please retry in 27.449120946s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"250000"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 250000, model: gemini-2.5-flash
+Please retry in 27.449120946s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"250000"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async rankAndSelectTopics (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ranking/index.ts:123:20)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:69:20)
+[2026-07-22T09:11:32.576Z] [ERROR] Error ranking topics with Gemini: | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 250000, model: gemini-2.5-flash
+Please retry in 27.449120946s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"250000"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_input_token_count, limit: 250000, model: gemini-2.5-flash
+Please retry in 27.449120946s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_input_token_count","quotaId":"GenerateContentInputTokensPerModelPerMinute-FreeTier","quotaDimensions":{"location":"global","model":"gemini-2.5-flash"},"quotaValue":"250000"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"27s"}]
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async rankAndSelectTopics (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ranking/index.ts:123:20)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:69:20)
+[2026-07-22T09:11:32.576Z] [INFO] Sorting by engagement score to select top 3 topics...
+[2026-07-22T09:11:32.576Z] [INFO] Top 3 topics selected: ["puppeteer/puppeteer - JavaScript API for Chrome and Firefox","punkpeye/awesome-mcp-servers - A collection of MCP servers.","lobehub/lobehub - 🤯 LobeHub is your Chief Agent Operator, organizing your agents into 7×24 operations by hiring, scheduling, and reporting on your entire AI team."]
+[2026-07-22T09:11:32.576Z] [INFO] Generating single X post for topic: "puppeteer/puppeteer - JavaScript API for Chrome an..."
+[2026-07-22T09:11:43.104Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-07-22T09:11:57.407Z] [INFO] Running quality review loop for generated post...
+[2026-07-22T09:12:00.833Z] [INFO] Quality review result: Passed = true. Feedback: The post draft is excellent. It's concise, hits the character limit, and delivers a fresh, contrarian take on Puppeteer's utility beyond just scraping. The tone is perfectly aligned with an engineer sharing a genuine insight, avoiding AI clichés and unnecessary fluff. Hashtags are relevant and within the specified range. Overall, a strong, engaging post.
+[2026-07-22T09:12:00.833Z] [INFO] Generating single X post for topic: "punkpeye/awesome-mcp-servers - A collection of MCP..."
+[2026-07-22T09:12:10.647Z] [INFO] Running quality review loop for generated post...
+[2026-07-22T09:12:16.092Z] [INFO] Quality review result: Passed = true. Feedback: The xPost is concise, under the character limit, and delivers a clear, contrarian engineering insight without AI clichés or emojis. The tone is perfectly aligned with a developer's personal observation. Hashtags are relevant and within the specified count.
+[2026-07-22T09:12:16.092Z] [INFO] Generating single X post for topic: "lobehub/lobehub - 🤯 LobeHub is your Chief Agent O..."
+[2026-07-22T09:12:27.634Z] [INFO] Running quality review loop for generated post...
+[2026-07-22T09:12:34.526Z] [INFO] Quality review result: Passed = false. Feedback: The xPost content itself is excellent, adhering to all stylistic and character constraints, and delivering a strong engineering insight. However, two hashtags contained typos: 'autonomouseai' should be 'autonomousai' and 'multiaigent' should be 'multiagent'. These have been corrected in the `correctedVersion`.
+[2026-07-22T09:12:34.667Z] [INFO] Applying Gemini corrected version for the post and insights.
+[2026-07-22T09:12:34.668Z] [INFO] Preparing to send Today's X Posts email...
+[2026-07-22T09:12:35.357Z] [ERROR] Failed to send email: | Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc9f2f0sm7716436eec.13 - gsmtp
+Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5a478bee46e88-3147dc9f2f0sm7716436eec.13 - gsmtp
+    at SMTPConnection._formatError (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:1588:34)
+    at SMTPConnection.<anonymous> (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:556:26)
+    at SMTPConnection._processResponse (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+    at TLSSocket.emit (node:events:524:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-07-22T09:12:35.358Z] [WARN] Skipped updating history as email delivery failed.
+[2026-07-22T09:12:35.358Z] [INFO] Daily workflow finished successfully in 155.00s.
