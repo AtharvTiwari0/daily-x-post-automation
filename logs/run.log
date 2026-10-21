@@ -8468,3 +8468,115 @@ Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For m
     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
 [2026-10-20T11:58:54.774Z] [WARN] Skipped updating history as email delivery failed.
 [2026-10-20T11:58:54.774Z] [INFO] Daily workflow finished successfully in 75.95s.
+[2026-10-21T12:12:34.441Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-10-21T12:12:34.442Z] [INFO] Starting parallel data collection from all sources...
+[2026-10-21T12:12:34.443Z] [INFO] Fetching Hacker News top stories...
+[2026-10-21T12:12:34.494Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-10-21T12:12:34.494Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-10-21T12:12:34.498Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-10-21T12:12:34.498Z] [INFO] Running GitHub search query: "created:>2026-10-20 stars:>10"...
+[2026-10-21T12:12:34.589Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-10-21T12:12:34.676Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-10-21T12:12:34.676Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-10-21T12:12:34.889Z] [INFO] Successfully fetched and filtered 35 stories from Hacker News.
+[2026-10-21T12:12:35.018Z] [INFO] Fetched and filtered 15 repositories from query: "created:>2026-10-20 stars:>10"
+[2026-10-21T12:12:35.018Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-10-20 stars:>50"...
+[2026-10-21T12:12:35.468Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: React.
+[2026-10-21T12:12:35.469Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-10-21T12:12:35.473Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-10-20 stars:>50"
+[2026-10-21T12:12:35.473Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-10-20 stars:>100"...
+[2026-10-21T12:12:35.523Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: JavaScript.
+[2026-10-21T12:12:35.523Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-10-21T12:12:35.571Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: AI.
+[2026-10-21T12:12:35.571Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-10-21T12:12:36.053Z] [INFO] Fetched and filtered 8 new articles from Dev.to tag: TypeScript.
+[2026-10-21T12:12:36.053Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-10-21T12:12:36.105Z] [INFO] Fetched and filtered 8 new articles from Dev.to tag: Next.js.
+[2026-10-21T12:12:36.105Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-10-21T12:12:36.121Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-10-20 stars:>100"
+[2026-10-21T12:12:36.121Z] [INFO] Total unique GitHub repositories collected: 45
+[2026-10-21T12:12:36.191Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: Flutter.
+[2026-10-21T12:12:36.191Z] [INFO] Successfully fetched and merged a total of 70 unique Dev.to articles.
+[2026-10-21T12:12:36.191Z] [INFO] Collected a total of 150 raw topics from all sources.
+[2026-10-21T12:12:36.192Z] [INFO] Merged duplicates: Reduced 150 topics to 150 unique topics.
+[2026-10-21T12:12:36.193Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-10-21T12:12:36.193Z] [INFO] No history found for the last 30 days. Skipping semantic check.
+[2026-10-21T12:12:36.193Z] [INFO] Ranking and selecting top 3 topics from 150 candidate topics...
+[2026-10-21T12:13:14.136Z] [INFO] Successfully selected the top 3 topics via Gemini ranking.
+[2026-10-21T12:13:14.136Z] [INFO] Top 3 topics selected: ["Upcoming critical PHP security release (CVE-2026-109618 / -109619)","Apple's Oct 16, 2026 App Review update: what changed, and the 5 rejections indie devs hit most","4 Ways a Qdrant RAG Chatbot Rots After the Demo (and the .NET Checks That Catch Them)"]
+[2026-10-21T12:13:14.137Z] [INFO] Generating single X post for topic: "Upcoming critical PHP security release (CVE-2026-1..."
+[2026-10-21T12:13:20.294Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:13:29.098Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:13:42.946Z] [INFO] Running quality review loop for generated post...
+[2026-10-21T12:13:48.243Z] [INFO] Quality review result: Passed = true. Feedback: The post draft is excellent. It's concise, hits the character limit, and offers a genuinely surprising engineering insight about the future-dated CVE. The tone is perfectly aligned with a developer-founder: direct, observant, and devoid of common AI clichés or filler. Hashtags are well-chosen and correctly placed outside the main text. Strong work.
+[2026-10-21T12:13:48.243Z] [INFO] Generating single X post for topic: "Apple's Oct 16, 2026 App Review update: what chang..."
+[2026-10-21T12:13:49.199Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:14:05.261Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:14:09.893Z] [ERROR] Gemini JSON Generation (gemini-2.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async generateAndReviewPosts (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/index.ts:69:14)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:81:23)
+[2026-10-21T12:14:09.893Z] [ERROR] Failed to generate initial post via Gemini. Using fallbacks. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async generateAndReviewPosts (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/index.ts:69:14)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:81:23)
+[2026-10-21T12:14:09.893Z] [INFO] Generating single X post for topic: "4 Ways a Qdrant RAG Chatbot Rots After the Demo (a..."
+[2026-10-21T12:14:11.510Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 1/3. Retrying in 1000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:14:13.403Z] [WARN] Gemini JSON Generation (gemini-2.5-flash) failed on attempt 2/3. Retrying in 2000ms... Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [503 Service Unavailable] This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.
+[2026-10-21T12:14:15.577Z] [ERROR] Gemini JSON Generation (gemini-2.5-flash) failed on final attempt 3/3. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 44.426651592s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-2.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"44s"}]
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 44.426651592s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-2.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"44s"}]
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async generateAndReviewPosts (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/index.ts:69:14)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:81:23)
+[2026-10-21T12:14:15.578Z] [ERROR] Failed to generate initial post via Gemini. Using fallbacks. | Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 44.426651592s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-2.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"44s"}]
+Stack: Error: [GoogleGenerativeAI Error]: Error fetching from https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent: [429 Too Many Requests] You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 44.426651592s. [{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Learn more about Gemini API quotas","url":"https://ai.google.dev/gemini-api/docs/rate-limits"}]},{"@type":"type.googleapis.com/google.rpc.QuotaFailure","violations":[{"quotaMetric":"generativelanguage.googleapis.com/generate_content_free_tier_requests","quotaId":"GenerateRequestsPerMinutePerProjectPerModel-FreeTier","quotaDimensions":{"model":"gemini-2.5-flash","location":"global"},"quotaValue":"5"}]},{"@type":"type.googleapis.com/google.rpc.RetryInfo","retryDelay":"44s"}]
+    at handleResponseNotOk (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:351:11)
+    at processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async makeRequest (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:324:9)
+    at async generateContent (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/@google/generative-ai/dist/index.js:741:22)
+    at async label (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/gemini.ts:64:20)
+    at async retry (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/utils/helpers.ts:49:14)
+    at async generateAndReviewPosts (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/ai/index.ts:69:14)
+    at async main (/home/runner/work/daily-x-post-automation/daily-x-post-automation/src/index.ts:81:23)
+[2026-10-21T12:14:15.578Z] [INFO] Preparing to send Today's X Posts email...
+[2026-10-21T12:14:15.881Z] [ERROR] Failed to send email: | Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-91c10baeadcsm23579326d6.19 - gsmtp
+Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-91c10baeadcsm23579326d6.19 - gsmtp
+    at SMTPConnection._formatError (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:1588:34)
+    at SMTPConnection.<anonymous> (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:556:26)
+    at SMTPConnection._processResponse (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+    at TLSSocket.emit (node:events:524:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-10-21T12:14:15.881Z] [WARN] Skipped updating history as email delivery failed.
+[2026-10-21T12:14:15.881Z] [INFO] Daily workflow finished successfully in 101.14s.
