@@ -8642,3 +8642,75 @@ Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For m
     at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
 [2026-10-22T12:17:08.604Z] [WARN] Skipped updating history as email delivery failed.
 [2026-10-22T12:17:08.604Z] [INFO] Daily workflow finished successfully in 90.83s.
+[2026-10-23T11:57:02.622Z] [INFO] Daily AI X Post Automation workflow started.
+[2026-10-23T11:57:02.624Z] [INFO] Starting parallel data collection from all sources...
+[2026-10-23T11:57:02.624Z] [INFO] Fetching Hacker News top stories...
+[2026-10-23T11:57:02.672Z] [INFO] Fetching Dev.to RSS feeds...
+[2026-10-23T11:57:02.672Z] [INFO] Fetching Dev.to feed for tag: General...
+[2026-10-23T11:57:02.676Z] [INFO] Fetching GitHub trending/popular repositories...
+[2026-10-23T11:57:02.676Z] [INFO] Running GitHub search query: "created:>2026-10-22 stars:>10"...
+[2026-10-23T11:57:02.771Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: General.
+[2026-10-23T11:57:02.771Z] [INFO] Fetching Dev.to feed for tag: React...
+[2026-10-23T11:57:02.882Z] [INFO] Fetching details for 50 Hacker News stories...
+[2026-10-23T11:57:03.199Z] [INFO] Fetched and filtered 10 new articles from Dev.to tag: React.
+[2026-10-23T11:57:03.200Z] [INFO] Fetching Dev.to feed for tag: JavaScript...
+[2026-10-23T11:57:03.204Z] [INFO] Successfully fetched and filtered 33 stories from Hacker News.
+[2026-10-23T11:57:03.486Z] [INFO] Fetched and filtered 15 repositories from query: "created:>2026-10-22 stars:>10"
+[2026-10-23T11:57:03.487Z] [INFO] Running GitHub search query: "topic:developer-tools pushed:>2026-10-22 stars:>50"...
+[2026-10-23T11:57:03.729Z] [INFO] Fetched and filtered 10 new articles from Dev.to tag: JavaScript.
+[2026-10-23T11:57:03.729Z] [INFO] Fetching Dev.to feed for tag: AI...
+[2026-10-23T11:57:03.742Z] [INFO] Fetched and filtered 9 new articles from Dev.to tag: AI.
+[2026-10-23T11:57:03.742Z] [INFO] Fetching Dev.to feed for tag: TypeScript...
+[2026-10-23T11:57:04.091Z] [INFO] Fetched and filtered 15 repositories from query: "topic:developer-tools pushed:>2026-10-22 stars:>50"
+[2026-10-23T11:57:04.091Z] [INFO] Running GitHub search query: "topic:ai pushed:>2026-10-22 stars:>100"...
+[2026-10-23T11:57:04.487Z] [INFO] Fetched and filtered 6 new articles from Dev.to tag: TypeScript.
+[2026-10-23T11:57:04.488Z] [INFO] Fetching Dev.to feed for tag: Next.js...
+[2026-10-23T11:57:04.667Z] [INFO] Fetched and filtered 15 repositories from query: "topic:ai pushed:>2026-10-22 stars:>100"
+[2026-10-23T11:57:04.667Z] [INFO] Total unique GitHub repositories collected: 45
+[2026-10-23T11:57:05.212Z] [INFO] Fetched and filtered 4 new articles from Dev.to tag: Next.js.
+[2026-10-23T11:57:05.213Z] [INFO] Fetching Dev.to feed for tag: Flutter...
+[2026-10-23T11:57:05.782Z] [INFO] Fetched and filtered 12 new articles from Dev.to tag: Flutter.
+[2026-10-23T11:57:05.782Z] [INFO] Successfully fetched and merged a total of 63 unique Dev.to articles.
+[2026-10-23T11:57:05.782Z] [INFO] Collected a total of 141 raw topics from all sources.
+[2026-10-23T11:57:05.783Z] [INFO] Merged duplicates: Reduced 141 topics to 141 unique topics.
+[2026-10-23T11:57:05.783Z] [INFO] Filtering candidate topics against 30-day history...
+[2026-10-23T11:57:05.784Z] [INFO] No history found for the last 30 days. Skipping semantic check.
+[2026-10-23T11:57:05.784Z] [INFO] Ranking and selecting top 3 topics from 141 candidate topics...
+[2026-10-23T11:57:34.075Z] [INFO] Successfully selected the top 3 topics via Gemini ranking.
+[2026-10-23T11:57:34.075Z] [INFO] Top 3 topics selected: ["What Companies Actually Want From AI","Eleven phrases our prices may never be described with, 28 tests from seven it() calls, and the one price on the site the test cannot see","Two Postgres clients, one database, and the only option they agree on is the one the pooler forces"]
+[2026-10-23T11:57:34.076Z] [INFO] Generating single X post for topic: "What Companies Actually Want From AI..."
+[2026-10-23T11:57:49.900Z] [INFO] Running quality review loop for generated post...
+[2026-10-23T11:57:55.840Z] [INFO] Quality review result: Passed = true. Feedback: The post draft is excellent. It successfully encapsulates a contrarian engineering insight in a concise, engaging, and personal tone. All strict requirements have been met:
+1. The xPost is well under 280 characters (257).
+2. The tone is distinctly that of an engineer sharing a personal observation and insight.
+3. It delivers a surprising insight about the shift from AI construction to containment.
+4. Hashtags are within the 5-8 range (8 total) and highly relevant.
+5. The xPost text is clean, with no embedded hashtags.
+6. There are no AI filler words present.
+7. No unnecessary emojis are used.
+8. Common clichés are successfully avoided.
+9. The post is factually consistent with the provided insights.
+[2026-10-23T11:57:55.841Z] [INFO] Generating single X post for topic: "Eleven phrases our prices may never be described w..."
+[2026-10-23T11:58:12.818Z] [INFO] Running quality review loop for generated post...
+[2026-10-23T11:58:19.763Z] [INFO] Quality review result: Passed = true. Feedback: The post draft passes all quality checks. The xPost is concise, under the character limit, and delivers a sharp, engineer-focused insight. It successfully avoids AI clichés and unnecessary elements. Hashtags are relevant and within the specified range, and consistency across all insights is maintained.
+[2026-10-23T11:58:19.763Z] [INFO] Generating single X post for topic: "Two Postgres clients, one database, and the only o..."
+[2026-10-23T11:58:35.559Z] [INFO] Running quality review loop for generated post...
+[2026-10-23T11:58:49.525Z] [INFO] Quality review result: Passed = false. Feedback: The X post failed the character limit check. It was 379 characters, exceeding the 280-character maximum. All other requirements for tone, insight, factual consistency, and avoiding AI clichés and emojis were met. The hashtags were within the allowed range and relevant.
+[2026-10-23T11:58:49.525Z] [INFO] Applying Gemini corrected version for the post and insights.
+[2026-10-23T11:58:49.525Z] [INFO] Preparing to send Today's X Posts email...
+[2026-10-23T11:58:49.994Z] [ERROR] Failed to send email: | Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 006d021491bc7-70b8b2088e4sm1774689eaf.4 - gsmtp
+Stack: Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 006d021491bc7-70b8b2088e4sm1774689eaf.4 - gsmtp
+    at SMTPConnection._formatError (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:809:19)
+    at SMTPConnection._actionAUTHComplete (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:1588:34)
+    at SMTPConnection.<anonymous> (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:556:26)
+    at SMTPConnection._processResponse (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:993:20)
+    at SMTPConnection._onData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:774:14)
+    at TLSSocket.SMTPConnection._onSocketData (/home/runner/work/daily-x-post-automation/daily-x-post-automation/node_modules/nodemailer/lib/smtp-connection/index.js:195:44)
+    at TLSSocket.emit (node:events:524:28)
+    at TLSSocket.emit (node:domain:489:12)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+[2026-10-23T11:58:49.994Z] [WARN] Skipped updating history as email delivery failed.
+[2026-10-23T11:58:49.994Z] [INFO] Daily workflow finished successfully in 106.90s.
